@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid 4x4</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">    
+</head>
+<body>
+    <div class="grid-container"> </div>
+    <script>
+        const lista_de_oficinas = [
+            {code: 1, visibleName:'Calidad laboratorios', hiddenName:'calidadlaboratorios', relatedWith: [15,9,1]},
+            {code: 2, visibleName:'Dirección postgrado', hiddenName:'direcciónpostgrado', relatedWith: [10,7,1]},
+            {code: 3, visibleName:'vicedecanato académico', hiddenName:'vicedecanatoacadémico', relatedWith: [3,13,3]},
+            {code: 4, visibleName:'Docencia servicio', hiddenName:'docenciaservicio', relatedWith: [6,14,3]},
+            {code: 5, visibleName:'Coordinación académica', hiddenName:'coordinaciónacadémica', relatedWith: [13,5,6]},
+            {code: 6, visibleName:'Coordinación administrativa', hiddenName:'coordinaciónadministrativa', relatedWith: [9,1,9]},
+            {code: 7, visibleName:'vicedecanato de investigaciones', hiddenName:'vicedecanatodeinvestigaciones', relatedWith: [9,9,1]},
+            {code: 8, visibleName:'Extención y proyección social', hiddenName:'extenciónyproyecciónsocial', relatedWith: [13,14,3]},
+            {code: 9, visibleName:'Asuntos internacionales', hiddenName:'asuntosinternacionales', relatedWith: [13,11,13]},
+            {code: 10, visibleName:'Sistema interno de calidad', hiddenName:'sistemainternodecalidad', relatedWith: [10,14,2]},
+            {code: 11, visibleName:'unidad de apoyo a la virtualización', hiddenName:'unidaddeapoyoalavirtualización', relatedWith: [15,1,15]},
+            {code: 12, visibleName:'Bienestar y cultura', hiddenName:'bienestarycultura', relatedWith: [6,10,14]},
+            {code: 13, visibleName:'Desarrollo docente', hiddenName:'desarrollodocente', relatedWith: [10,12,8]},
+            {code: 14, visibleName:'Comunicaciones', hiddenName:'comunicaciones', relatedWith: [10,12,7]},
+            {code: 15, visibleName:'CRTHS', hiddenName:'crths', relatedWith: [12,4,15]},
+
+        ];
+        let gridContainer = document.querySelector(".grid-container");
+        lista_de_oficinas.forEach(el => {
+            let divElement = document.createElement("div");
+            divElement.setAttribute("class","block");
+            divElement.setAttribute("id", el.hiddenName + el.code);
+            divElement.setAttribute("code", el.code);
+
+            let innerDiv = document.createElement("div");
+            
+            let innerImg = document.createElement("img");
+            let innerP = document.createElement("p");
+            
+            innerImg.setAttribute("src","img/calidaddelaboratorios.png");
+            innerP.innerText = el.visibleName;
+            divElement.appendChild(innerDiv);
+            innerDiv.appendChild(innerImg);
+            innerDiv.appendChild(innerP);
+            gridContainer.appendChild(divElement);
+        });
+        document.querySelectorAll(".block").forEach(block => {
+            block.addEventListener("mouseenter", (e) => {
+                let me = e.srcElement;
+                myCode = me.getAttribute("code"); 
+                
+                for (let i = 0; i < lista_de_oficinas.length; i++) {
+                    if (lista_de_oficinas[i].code == myCode) {
+                        lista_de_oficinas[i].relatedWith.forEach(relatedCode => {
+                            document.querySelector(`[code="${relatedCode}"]`).classList.toggle("related")
+                            });
+                            break;
+                        }                    
+                }
+            });
+            block.addEventListener("mouseleave", (e) => {
+                let me = e.srcElement;
+                myCode = me.getAttribute("code"); 
+                
+                for (let i = 0; i < lista_de_oficinas.length; i++) {
+                    if (lista_de_oficinas[i].code == myCode) {
+                        lista_de_oficinas[i].relatedWith.forEach(relatedCode => {
+                            document.querySelector(`[code="${relatedCode}"]`).classList.toggle("related")
+                            });
+                            break;
+                        }                    
+                }
+            });
+            block.addEventListener("click", (e) => {
+            console.log("Trabajando en ello...");
+            
+            });
+        });
+</script>
+</body>
+</html>
