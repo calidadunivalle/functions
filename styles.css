@@ -4,9 +4,9 @@
     --color-black: #151515;
     --color-purple: #D3C4E3;
     --color-dark-blue: #8F95D330;
-    --color-light-blue: #89DAFF;
+    --color-light-blue: #89DAFF55;
     --color-pink: #F45B69;
-    --color-pink-transparent: #F45B6920;
+    --color-pink-transparent: #F45B6930;
     --color-transparent: #0000;
 
 }
@@ -43,14 +43,17 @@ body {
     outline: 3px dotted #0000;
     border-radius: 20px;
     cursor: pointer;
+    outline: .5rem dashed var(--color-transparent);
 }
 .block:hover {
-    background-color: var(--color-light-blue);
-    outline: 3px dotted var(--color-pink);
+    background-color: var(--color-pink-transparent);
+    /* background-color: var(--color-light-blue); */
+    outline: .3rem dashed var(--color-pink);
+    outline-offset: .2rem;
 }
 .related{
     transition: all, .3s ;
-    outline: 4px dotted var(--color-pink);
+    outline: .3rem dashed var(--color-pink);
     /* background-color: var(--color-pink-transparent); */
 }
 .block > div {
@@ -74,3 +77,70 @@ body {
     margin-top: calc(max(95vh, 95vw) / 70);
     font-size: 1.3rem;
 }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      div.sphere-container {
+        z-index: 2;
+        /* justify-content: center;
+        align-items: center; */
+        height: 100vh;
+        width: 100vw;
+        /* background-color: #000; */
+        position: absolute;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        background-color: var(--color-dark-blue);
+        /* backdrop-filter: blur(3px); */
+       
+      }
+      .sphere {
+        background-color: #f5ecff;
+        transition: all, 0.5s ease;
+        border-radius: 50%;
+        position: fixed;
+        z-index: 4;
+        display: flex;
+        outline: .5rem dashed #15151500;
+    }
+    .sphere:hover {
+        background-color: #d3c4e3;
+        outline: .5rem dashed #151515;
+          outline-offset: .2rem;
+      }
+      .back-line {
+        border-radius: 50%;
+        position: fixed;
+        z-index: 1;
+        /* height: 50vh;
+        width: 50vh; */
+        border: 2rem double #f0f9;
+      }
+      .sphere-container section {
+        display: flex;
+        flex-direction: column;
+        padding: 20%;
+        justify-content: center;
+      }
+      button {
+        font-size: inherit;
+        width: 80%;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+      }
+    #blur-bg{
+        display: block;
+        position: fixed;
+        z-index: 1;
+        background-color: #fff8;
+        backdrop-filter: blur(1rem);
+
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+    }
