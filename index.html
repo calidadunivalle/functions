@@ -1,195 +1,239 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grid 4x4</title>
-    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="styles.css" />
+    <title>Donut Chart</title>
   </head>
   <body>
-    <div class="grid-container"></div>
     <script>
-      const lista_de_oficinas = [
-        {
-          code: 1,
-          visibleName: "Calidad laboratorios",
-          hiddenName: "calidadlaboratorios",
-          relatedWith: [15, 9, 1],
-        },
-        {
-          code: 2,
-          visibleName: "Dirección postgrado",
-          hiddenName: "direcciónpostgrado",
-          relatedWith: [10, 7, 1],
-        },
-        {
-          code: 3,
-          visibleName: "vicedecanato académico",
-          hiddenName: "vicedecanatoacadémico",
-          relatedWith: [3, 13, 3],
-        },
-        {
-          code: 4,
-          visibleName: "Docencia servicio",
-          hiddenName: "docenciaservicio",
-          relatedWith: [6, 14, 3],
-        },
-        {
-          code: 5,
-          visibleName: "Coordinación académica",
-          hiddenName: "coordinaciónacadémica",
-          relatedWith: [13, 5, 6],
-        },
-        {
-          code: 6,
-          visibleName: "Coordinación administrativa",
-          hiddenName: "coordinaciónadministrativa",
-          relatedWith: [9, 1, 9],
-        },
-        {
-          code: 7,
-          visibleName: "vicedecanato de investigaciones",
-          hiddenName: "vicedecanatodeinvestigaciones",
-          relatedWith: [9, 9, 1],
-        },
-        {
-          code: 8,
-          visibleName: "Extención y proyección social",
-          hiddenName: "extenciónyproyecciónsocial",
-          relatedWith: [13, 14, 3],
-        },
-        {
-          code: 9,
-          visibleName: "Asuntos internacionales",
-          hiddenName: "asuntosinternacionales",
-          relatedWith: [13, 11, 13],
-        },
-        {
-          code: 10,
-          visibleName: "Sistema interno de calidad",
-          hiddenName: "sistemainternodecalidad",
-          relatedWith: [10, 14, 2],
-        },
-        {
-          code: 11,
-          visibleName: "unidad de apoyo a la virtualización",
-          hiddenName: "unidaddeapoyoalavirtualización",
-          relatedWith: [15, 1, 15],
-        },
-        {
-          code: 12,
-          visibleName: "Bienestar y cultura",
-          hiddenName: "bienestarycultura",
-          relatedWith: [6, 10, 14],
-        },
-        {
-          code: 13,
-          visibleName: "Desarrollo docente",
-          hiddenName: "desarrollodocente",
-          relatedWith: [10, 12, 8],
-        },
-        {
-          code: 14,
-          visibleName: "Comunicaciones",
-          hiddenName: "comunicaciones",
-          relatedWith: [10, 12, 7],
-        },
-        {
-          code: 15,
-          visibleName: "CRTHS",
-          hiddenName: "crths",
-          relatedWith: [12, 4, 15],
-        },
-      ];
-      let gridContainer = document.querySelector(".grid-container");
-      lista_de_oficinas.forEach((el) => {
-        let divElement = document.createElement("div");
-        divElement.setAttribute("class", "block");
-        divElement.setAttribute("id", el.hiddenName + el.code);
-        divElement.setAttribute("code", el.code);
+      let distanceAvaliable =
+        window.innerWidth < window.innerHeight
+          ? window.innerWidth
+          : window.innerHeight;
+      distanceAvaliable *= 0.95;
+      let _innerRadius = distanceAvaliable / 5;
 
-        let innerDiv = document.createElement("div");
+      let config = {
+        levels: [
+          {
+            sectionsNumber: 3,
+            sectionsInfo: [
+              {
+                label: "nombre A",
+                // color: "#FF6B6B",
+                func: () => alert("Por definir para A"),
+              },
+              {
+                label: "nombre B",
+                // color: "#4D96FF",
+                func: () => alert("Por definir para B"),
+              },
+              {
+                label: "nombre C",
+                // color: "#6BCB77",
+                func: () => alert("Por definir para C"),
+              },
+            ],
+          },
+          {
+            sectionsNumber: 2,
+            sectionsInfo: [
+              {
+                label: "nombre D",
+                // color: "#FFA94D",
+                func: () => alert("Por definir para D"),
+              },
+              {
+                label: "nombre E",
+                // color: "#B85CFF",
+                func: () => alert("Por definir para E"),
+              },
+            ],
+          },
+          {
+            sectionsNumber: 4,
+            sectionsInfo: [
+              {
+                label: "nombre F",
+                // color: "#FF85A2",
+                func: () => alert("Por definir para F"),
+              },
+              {
+                label: "nombre G",
+                // color: "#FFD700",
+                func: () => alert("Por definir para G"),
+              },
+              {
+                label: "evento de prueba",
+                // color: "#76EEC6",
+                func: () => makeSphere(3),
+              },
+              {
+                label: "nombre I",
+                // color: "#8B4513",
+                func: () => alert("Por definir para I"),
+              },
+            ],
+          },
+        ],
+        innerRadius: _innerRadius,
+        width: distanceAvaliable,
+        height: distanceAvaliable,
+      };
+      config.thickness =
+        (distanceAvaliable - _innerRadius * 2) / (config.levels.length * 2);
 
-        let innerImg = document.createElement("img");
-        let innerP = document.createElement("p");
+      function generateDonutChart(config) {
+        const svgNS = "http://www.w3.org/2000/svg";
+        const svg = document.createElementNS(svgNS, "svg");
+        svg.setAttribute("width", config.width);
+        svg.setAttribute("height", config.height);
 
-        innerImg.setAttribute("src", "calidaddelaboratorios.png");
-        innerP.innerText = el.visibleName;
-        divElement.appendChild(innerDiv);
-        innerDiv.appendChild(innerImg);
-        innerDiv.appendChild(innerP);
-        gridContainer.appendChild(divElement);
-      });
-      document.querySelectorAll(".block").forEach((block) => {
-        block.addEventListener("mouseenter", (e) => {
-          let me = e.srcElement;
-          myCode = me.getAttribute("code");
+        const defs = document.createElementNS(svgNS, "defs");
+        svg.appendChild(defs);
 
-          for (let i = 0; i < lista_de_oficinas.length; i++) {
-            if (lista_de_oficinas[i].code == myCode) {
-              lista_de_oficinas[i].relatedWith.forEach((relatedCode) => {
-                document
-                  .querySelector(`[code="${relatedCode}"]`)
-                  .classList.toggle("related");
-              });
-              break;
-            }
-          }
+        const centerX = config.width / 2;
+        const centerY = config.height / 2;
+        let currentRadius = config.innerRadius;
+
+        config.levels.forEach((level, levelIndex) => {
+          const angleStep = (2 * Math.PI) / level.sectionsNumber;
+          const outerRadius = currentRadius + config.thickness;
+
+          level.sectionsInfo.forEach((section, i) => {
+            const startAngle = i * angleStep;
+            const endAngle = (i + 1) * angleStep;
+            const midAngle = (startAngle + endAngle) / 2;
+
+            const path = document.createElementNS(svgNS, "path");
+            const largeArc = angleStep > Math.PI ? 1 : 0;
+
+            const x1 = centerX + currentRadius * Math.cos(startAngle);
+            const y1 = centerY + currentRadius * Math.sin(startAngle);
+            const x2 = centerX + outerRadius * Math.cos(startAngle);
+            const y2 = centerY + outerRadius * Math.sin(startAngle);
+            const x3 = centerX + outerRadius * Math.cos(endAngle);
+            const y3 = centerY + outerRadius * Math.sin(endAngle);
+            const x4 = centerX + currentRadius * Math.cos(endAngle);
+            const y4 = centerY + currentRadius * Math.sin(endAngle);
+
+            const d = `M ${x1} ${y1} L ${x2} ${y2} A ${outerRadius} ${outerRadius} 0 ${largeArc} 1 ${x3} ${y3} 
+                     L ${x4} ${y4} A ${currentRadius} ${currentRadius} 0 ${largeArc} 0 ${x1} ${y1} Z`;
+
+            path.setAttribute("d", d);
+            path.setAttribute("fill", `hsl(${getColor()}deg, 90%, 45%)`);
+            path.setAttribute("stroke", "#fff");
+            path.setAttribute("stroke-width", "5");
+
+            const textPathId = `textPath-${levelIndex}-${i}`;
+            const textArc = document.createElementNS(svgNS, "path");
+            textArc.setAttribute("id", textPathId);
+            textArc.setAttribute(
+              "d",
+              `M ${
+                centerX +
+                (currentRadius + config.thickness / 3) * Math.cos(startAngle)
+              } 
+                                        ${
+                                          centerY +
+                                          (currentRadius +
+                                            config.thickness / 3) *
+                                            Math.sin(startAngle)
+                                        } 
+                                     A ${
+                                       currentRadius + config.thickness / 3
+                                     } ${
+                currentRadius + config.thickness / 3
+              } 0 ${largeArc} 1 
+                                        ${
+                                          centerX +
+                                          (currentRadius +
+                                            config.thickness / 3) *
+                                            Math.cos(endAngle)
+                                        } 
+                                        ${
+                                          centerY +
+                                          (currentRadius +
+                                            config.thickness / 3) *
+                                            Math.sin(endAngle)
+                                        }`
+            );
+            defs.appendChild(textArc);
+
+            const textElement = document.createElementNS(svgNS, "text");
+            const textPath = document.createElementNS(svgNS, "textPath");
+            textPath.setAttribute("href", `#${textPathId}`);
+            textPath.setAttribute("startOffset", "50%");
+            textPath.setAttribute("font-weight", "bold");
+            // textPath.setAttribute("font-size", "1%");
+            textPath.setAttribute("text-anchor", "middle");
+            textPath.textContent = section.label.toUpperCase();
+            textElement.appendChild(textPath);
+
+            const group = document.createElementNS(svgNS, "g");
+            group.appendChild(path);
+            group.appendChild(textElement);
+
+            group.addEventListener("mouseover", () =>
+              path.setAttribute("fill", "#222")
+            );
+            group.addEventListener(
+              "mouseout",
+              () => path.setAttribute("fill", `hsl(${getColor()}deg, 90%, 45%)`)
+              //   path.setAttribute("fill", section.color)
+            );
+            group.addEventListener("click", section.func);
+
+            svg.appendChild(group);
+          });
+          currentRadius = outerRadius;
         });
-        block.addEventListener("mouseleave", (e) => {
-          let me = e.srcElement;
-          myCode = me.getAttribute("code");
 
-          for (let i = 0; i < lista_de_oficinas.length; i++) {
-            if (lista_de_oficinas[i].code == myCode) {
-              lista_de_oficinas[i].relatedWith.forEach((relatedCode) => {
-                document
-                  .querySelector(`[code="${relatedCode}"]`)
-                  .classList.toggle("related");
-              });
-              break;
-            }
-          }
-        });
+        document.body.appendChild(svg);
+      }
+      function getColor(m = 30) {
+        return (Math.floor(Math.random() * m) + 1) * (360 / m);
+      }
+      generateDonutChart(config);
 
-        block.addEventListener("click", (e) => {
-            document.querySelector("#blur-bg")?.remove();
-            document.querySelector(".back-line")?.remove();
-            document.querySelector(".sphere-container")?.remove();
-            
-            document.body.innerHTML += `<div id="blur-bg"></div>  <div class="back-line"></div>
-    <div class="sphere-container"></div>`;
-    document.querySelector(".sphere-container").addEventListener("click",(e)=>{
-    if (e.srcElement == document.querySelector(".sphere-container")) {
-        // document.querySelectorAll(".block").forEach((e=>e.classList.remove("related")));
-        // document.querySelector("#blur-bg")?.remove();
-        //     document.querySelector(".back-line")?.remove();
-        //     document.querySelector(".sphere-container")?.remove();
-            location.reload();
-    }
-    });
-    hacerBola((s =5));
-      function hacerBola(s = 3) {
-        let sphereContainer = document.querySelector(".sphere-container");
-        sphereContainer.innerHTML = "";
-        let sphereNumber = s;
+      function makeSphere(sphereNumber) {
+        let blurBG = document.createElement("div");
+        let backLine = document.createElement("div");
+        let sphereContainer = document.createElement("div");
+        let imgclose = document.createElement("img");
+
+        blurBG.setAttribute("id", "blur-bg");
+        backLine.setAttribute("class", "back-line");
+        sphereContainer.setAttribute("class", "sphere-container");
+        imgclose.setAttribute("src", "x.svg");
+        imgclose.setAttribute("id", "img-close");
+
+        sphereContainer.addEventListener("click", close);
+        imgclose.addEventListener("click", close);
+
+        document.body.appendChild(blurBG);
+        document.body.appendChild(backLine);
+        document.body.appendChild(sphereContainer);
+        document.body.appendChild(imgclose);
+
+        // sphereContainer.innerHTML = "";
         let angle = (2 * Math.PI) / sphereNumber;
         let distance =
           window.innerWidth < window.innerHeight
             ? window.innerWidth
             : window.innerHeight;
-        //   let radius = 0.2 * distance;
         let radius2 =
           0.5 *
-          ((0.35 * distance) ** 2 - (0.35 * distance) ** 2 * Math.cos(angle)) ** 0.5;
-        let len = distance / 2 - radius2;
+          ((0.35 * distance) ** 2 - (0.35 * distance) ** 2 * Math.cos(angle)) **
+            0.5;
+        let len = distance / 2.1 - radius2;
         let [x_, y_] = [
           window.innerWidth / 2 - radius2,
           window.innerHeight / 2 - radius2,
         ];
 
-        console.log({radius2 });
         for (let i = 1; i <= sphereNumber; i++) {
           let newy = Math.sin(angle * i) * len;
           let newx = Math.cos(angle * i) * len;
@@ -200,27 +244,27 @@
             "style",
             `left: ${x_ + newx}px;top: ${y_ + newy}px;height:${
               radius2 * 2
-            }px; width:${radius2 * 2}px;`
+            }px; width:${radius2 * 2}px; background-color: hsl(${i * 360/sphereNumber}deg, 100%, 90%);`
           );
-          innerDiv.innerHTML += `<section style="font-size:${radius2*0.1}px;">
-        <h3>Nombre de proceso</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, velit
-          totam. Autem doloremque
-        </p>
-        <button>Ver pdf</button>
-        <button>Ver revista</button>
-    </section>`;
+          innerDiv.innerHTML += `<section style="font-size:${radius2 * 0.12}px;">
+            <h3><a href="#">Nombre de proceso</a></h3>
+            <button>Descargar pdf</button>
+            <button>Ver ruta</button>
+            </section>`;
           sphereContainer.appendChild(innerDiv);
         }
         let bl = document.querySelector(".back-line");
-        bl.setAttribute(
-          "style",
-          `height:${len * 2}px; width:${len * 2}px;` 
-        );
+        bl.setAttribute("style", `height:${len * 2}px; width:${len * 2}px;`);
       }
-        });
-      });
+      function close(e) {
+        let sc = document.querySelector(".sphere-container");
+        let ic = document.querySelector("#img-close");
+        if(e.target !== sc && e.target !== ic) return 0;
+        document.querySelector("#blur-bg").remove();
+        document.querySelector(".back-line").remove();
+        document.querySelector("#img-close").remove();
+        document.querySelector(".sphere-container").remove();  
+      }
     </script>
   </body>
 </html>
