@@ -7,96 +7,48 @@
     <title>Donut Chart</title>
   </head>
   <body>
+  <script>
+    function deleteWindow() {
+      document.querySelector(".ventana").remove();
+    }
+    
+    function getWH() {
+      let w = document.getElementById("sec").clientWidth;
+      let h = document.getElementById("sec").clientHeight;
+      document.querySelector("iframe").setAttribute("width", w); 
+      document.querySelector("iframe").setAttribute("height", h); 
+    }
+  </script>
     <script>
-      let distanceAvaliable =
-        window.innerWidth < window.innerHeight
-          ? window.innerWidth
-          : window.innerHeight;
-      distanceAvaliable *= 0.95;
-      let _innerRadius = distanceAvaliable / 5;
+      globlalData = null;
+      globlalConfig = null;
+      function setGoblalData(data) {
+        globlalData = data;
+      }
+      function setGloblalConfig(config) {
+        globlalConfig = config;
+      }
+      function getSize(expected) {
+        let distanceAvaliable = window.innerWidth < window.innerHeight ? window.innerWidth : window.innerHeight;
+        if (expected == "distanceAvaliable") return distanceAvaliable * 0.95;
+        if (expected == "innerRadius") return (distanceAvaliable * 0.95) / 5;
+        return 0;
+      }
 
-      let config = {
-        levels: [
-          {
-            sectionsNumber: 3,
-            sectionsInfo: [
-              {
-                label: "nombre A",
-                // color: "#FF6B6B",
-                func: () => alert("Por definir para A"),
-              },
-              {
-                label: "nombre B",
-                // color: "#4D96FF",
-                func: () => alert("Por definir para B"),
-              },
-              {
-                label: "nombre C",
-                // color: "#6BCB77",
-                func: () => alert("Por definir para C"),
-              },
-            ],
-          },
-          {
-            sectionsNumber: 2,
-            sectionsInfo: [
-              {
-                label: "nombre D",
-                // color: "#FFA94D",
-                func: () => alert("Por definir para D"),
-              },
-              {
-                label: "nombre E",
-                // color: "#B85CFF",
-                func: () => alert("Por definir para E"),
-              },
-            ],
-          },
-          {
-            sectionsNumber: 4,
-            sectionsInfo: [
-              {
-                label: "nombre F",
-                // color: "#FF85A2",
-                func: () => alert("Por definir para F"),
-              },
-              {
-                label: "nombre G",
-                // color: "#FFD700",
-                func: () => alert("Por definir para G"),
-              },
-              {
-                label: "evento de prueba",
-                // color: "#76EEC6",
-                func: () => makeSphere(3),
-              },
-              {
-                label: "nombre I",
-                // color: "#8B4513",
-                func: () => alert("Por definir para I"),
-              },
-            ],
-          },
-        ],
-        innerRadius: _innerRadius,
-        width: distanceAvaliable,
-        height: distanceAvaliable,
-      };
-      config.thickness =
-        (distanceAvaliable - _innerRadius * 2) / (config.levels.length * 2);
-
-      function generateDonutChart(config) {
+      function generateBigDona(config) {
         const svgNS = "http://www.w3.org/2000/svg";
         const svg = document.createElementNS(svgNS, "svg");
         svg.setAttribute("width", config.width);
         svg.setAttribute("height", config.height);
+        // svg.setAttribute("font-zise", config.height);
+console.log(config);
 
         const defs = document.createElementNS(svgNS, "defs");
         svg.appendChild(defs);
 
         const centerX = config.width / 2;
         const centerY = config.height / 2;
-        let currentRadius = config.innerRadius;
+        let currentRadius = config.innerRadius/2;
 
         config.levels.forEach((level, levelIndex) => {
           const angleStep = (2 * Math.PI) / level.sectionsNumber;
@@ -119,8 +71,7 @@
             const x4 = centerX + currentRadius * Math.cos(endAngle);
             const y4 = centerY + currentRadius * Math.sin(endAngle);
 
-            const d = `M ${x1} ${y1} L ${x2} ${y2} A ${outerRadius} ${outerRadius} 0 ${largeArc} 1 ${x3} ${y3} 
-                     L ${x4} ${y4} A ${currentRadius} ${currentRadius} 0 ${largeArc} 0 ${x1} ${y1} Z`;
+            const d = `M ${x1} ${y1} L ${x2} ${y2} A ${outerRadius} ${outerRadius} 0 ${largeArc} 1 ${x3} ${y3}        L ${x4} ${y4} A ${currentRadius} ${currentRadius} 0 ${largeArc} 0 ${x1} ${y1} Z`;
 
             path.setAttribute("d", d);
             path.setAttribute("fill", `hsl(${getColor()}deg, 90%, 45%)`);
@@ -130,36 +81,7 @@
             const textPathId = `textPath-${levelIndex}-${i}`;
             const textArc = document.createElementNS(svgNS, "path");
             textArc.setAttribute("id", textPathId);
-            textArc.setAttribute(
-              "d",
-              `M ${
-                centerX +
-                (currentRadius + config.thickness / 3) * Math.cos(startAngle)
-              } 
-                                        ${
-                                          centerY +
-                                          (currentRadius +
-                                            config.thickness / 3) *
-                                            Math.sin(startAngle)
-                                        } 
-                                     A ${
-                                       currentRadius + config.thickness / 3
-                                     } ${
-                currentRadius + config.thickness / 3
-              } 0 ${largeArc} 1 
-                                        ${
-                                          centerX +
-                                          (currentRadius +
-                                            config.thickness / 3) *
-                                            Math.cos(endAngle)
-                                        } 
-                                        ${
-                                          centerY +
-                                          (currentRadius +
-                                            config.thickness / 3) *
-                                            Math.sin(endAngle)
-                                        }`
-            );
+            textArc.setAttribute( "d", `M ${ centerX + (currentRadius + config.thickness / 3) * Math.cos(startAngle) } ${ centerY +(currentRadius + config.thickness / 3) * Math.sin(startAngle) } A ${ currentRadius + config.thickness / 3 } ${ currentRadius + config.thickness / 3 } 0 ${largeArc} 1 ${ centerX +(currentRadius + config.thickness / 3) * Math.cos(endAngle) } ${ centerY +(currentRadius + config.thickness / 3) * Math.sin(endAngle)}`);
             defs.appendChild(textArc);
 
             const textElement = document.createElementNS(svgNS, "text");
@@ -167,7 +89,6 @@
             textPath.setAttribute("href", `#${textPathId}`);
             textPath.setAttribute("startOffset", "50%");
             textPath.setAttribute("font-weight", "bold");
-            // textPath.setAttribute("font-size", "1%");
             textPath.setAttribute("text-anchor", "middle");
             textPath.textContent = section.label.toUpperCase();
             textElement.appendChild(textPath);
@@ -175,17 +96,85 @@
             const group = document.createElementNS(svgNS, "g");
             group.appendChild(path);
             group.appendChild(textElement);
+            group.addEventListener("mouseover", () => path.setAttribute("fill", "#222"));
+            group.addEventListener( "mouseout", () => path.setAttribute("fill", `hsl(${getColor()}deg, 90%, 45%)`));
+            group.addEventListener("click", ()=>{ 
+              let test = (k)=> { let x=2; let control = [2];
+                while(true){  let suma = control.reduce((acumulador, elemento) => acumulador + elemento, 0);	
+                  if (suma<k){ control.push(x+1); x++; }else{break} } return control; };
+                  // console.log({testControl: test(16)});
+                  
+              let newLevel = new Object;
+              let newData = new Array;
+                  let tempLevels = new Array;
+              let localConfig = new Object;
+              control = test(section.innerInfo.length);
+              // localConfig.sectionsNumber = control.length;
+              let tempData = new Array;
+              section.innerInfo.forEach((e,i) => {
+                // console.log({e });
+                  tempData.push({
+                  label: e.PROCESO, /*Short name of guía*/
+                  macro: e.MACROPROCESO,
+                  linkPdf: e.PDF,
+                  linkRevista: e.REVISTA,
+                  linkRuta: e.RUTA,
+                  responsable: e.RESPONSABLE,
+                  dependence: e.DEPENDENCIA,
+                  status: e.ESTADO, /*Agregar una funcion que controle el estatus desde un valor numérico*/
+                  fullname: e.GUIA,
+                  visible: (e.VISIBILIDAD == "TRUE")?true:false,
+                  /*
+                    CADA e CONTIENE INFO SOBRE:
+                    DEPENDENCIA: "dependencia 4"
+                    ESTADO: "No ha iniciado"
+                    GUIA: "nombre completo de guía 1"
+                    ::MACROPROCESO: "nombre 3"
+                    ::PDF: "https://example.com/"
+                    ::PROCESO: "nombre corto de proceso 1"
+                    ::RESPONSABLE: "xxxxxxxxx"
+                    ::REVISTA: "https://example.com/"
+                    ::RUTA: "https://example.com/"
+                    ::VISIBILIDAD: "TRUE"
+                  */
+                  });
 
-            group.addEventListener("mouseover", () =>
-              path.setAttribute("fill", "#222")
-            );
-            group.addEventListener(
-              "mouseout",
-              () => path.setAttribute("fill", `hsl(${getColor()}deg, 90%, 45%)`)
-              //   path.setAttribute("fill", section.color)
-            );
-            group.addEventListener("click", section.func);
+                    // newLevel.sectionsInfo = tempData;
+                    // newLevel.sectionsNumber = k;
+                      // newData.push(newLevel);
+              });
+              let limit = tempData.length;
+              let counter = 0;
+              bigSplitted = [];
+              for (let i = 0; i < control.length; i++) {
+                let splitted = [];
+                for (let ii = 1; ii <= control[i]; ii++) {
+                  if (counter == limit) break;
+                  splitted.push(tempData[counter]);
+                  counter++; 
+                }
+                bigSplitted.push(splitted);
+              }
+              localConfig.levels = [];
+              // Object { sectionsNumber: 5, sectionsInfo: (5) […] }
+              // localConfig.levels.sectionsInfo = bigSplitted;
+              bigSplitted.forEach((el) => {
+                localConfig.levels.push({
+                  sectionsNumber: el.length,
+                  sectionsInfo: el,
+                });
+              }); 
 
+              let size = getSize("distanceAvaliable");
+              localConfig.innerRadius =  size * 0.2;
+              localConfig.width = size ;
+              localConfig.height = size ;
+              localConfig.thickness = ((size - (localConfig.innerRadius * 2))/ localConfig.levels.length * 0.5);
+              document.querySelector("svg").remove()
+              
+              generateSmallDona(localConfig)
+              
+            });
             svg.appendChild(group);
           });
           currentRadius = outerRadius;
@@ -193,78 +182,210 @@
 
         document.body.appendChild(svg);
       }
+      function generateSmallDona(config) {
+        const svgNS = "http://www.w3.org/2000/svg";
+        const svg = document.createElementNS(svgNS, "svg");
+        svg.setAttribute("width", config.width);
+        svg.setAttribute("height", config.height);
+
+        const defs = document.createElementNS(svgNS, "defs");
+        svg.appendChild(defs);
+
+        const centerX = config.width / 2;
+        const centerY = config.height / 2;
+        let currentRadius = config.innerRadius/2;
+
+        config.levels.forEach((level, levelIndex) => {
+          const angleStep = (2 * Math.PI) / level.sectionsNumber;
+          const outerRadius = currentRadius + config.thickness;
+
+          level.sectionsInfo.forEach((section, i) => {
+            const startAngle = i * angleStep;
+            const endAngle = (i + 1) * angleStep;
+            const midAngle = (startAngle + endAngle) / 2;
+
+            const path = document.createElementNS(svgNS, "path");
+            const largeArc = angleStep > Math.PI ? 1 : 0;
+
+            const x1 = centerX + currentRadius * Math.cos(startAngle);
+            const y1 = centerY + currentRadius * Math.sin(startAngle);
+            const x2 = centerX + outerRadius * Math.cos(startAngle);
+            const y2 = centerY + outerRadius * Math.sin(startAngle);
+            const x3 = centerX + outerRadius * Math.cos(endAngle);
+            const y3 = centerY + outerRadius * Math.sin(endAngle);
+            const x4 = centerX + currentRadius * Math.cos(endAngle);
+            const y4 = centerY + currentRadius * Math.sin(endAngle);
+
+            const d = `M ${x1} ${y1} L ${x2} ${y2} A ${outerRadius} ${outerRadius} 0 ${largeArc} 1 ${x3} ${y3}        L ${x4} ${y4} A ${currentRadius} ${currentRadius} 0 ${largeArc} 0 ${x1} ${y1} Z`;
+
+            path.setAttribute("d", d);
+            path.setAttribute("fill", `hsl(${getColor()}deg, 90%, 45%)`);
+            path.setAttribute("stroke", "#fff");
+            path.setAttribute("stroke-width", "5");
+
+            const textPathId = `textPath-${levelIndex}-${i}`;
+            const textArc = document.createElementNS(svgNS, "path");
+            textArc.setAttribute("id", textPathId);
+            textArc.setAttribute( "d", `M ${ centerX + (currentRadius + config.thickness / 3) * Math.cos(startAngle) } ${ centerY +(currentRadius + config.thickness / 3) * Math.sin(startAngle) } A ${ currentRadius + config.thickness / 3 } ${ currentRadius + config.thickness / 3 } 0 ${largeArc} 1 ${ centerX +(currentRadius + config.thickness / 3) * Math.cos(endAngle) } ${ centerY +(currentRadius + config.thickness / 3) * Math.sin(endAngle)}`);
+            defs.appendChild(textArc);
+
+            const textElement = document.createElementNS(svgNS, "text");
+            const textPath = document.createElementNS(svgNS, "textPath");
+            textPath.setAttribute("href", `#${textPathId}`);
+            textPath.setAttribute("startOffset", "50%");
+            textPath.setAttribute("font-weight", "bold");
+            textPath.setAttribute("text-anchor", "middle");
+            textPath.textContent = section.label.toUpperCase();
+            textElement.appendChild(textPath);
+
+            const group = document.createElementNS(svgNS, "g");
+            group.appendChild(path);
+            group.appendChild(textElement);
+            group.addEventListener("mouseover", () => path.setAttribute("fill", "#222"));
+            group.addEventListener( "mouseout", () => path.setAttribute("fill", `hsl(${getColor()}deg, 90%, 40%)`));
+            group.addEventListener("click", ()=>{               
+            let ventana =
+                `<div class="ventana">
+                  <div class="seccion">
+                    <button type="button" onclick="deleteWindow()"> Cerrar </button>
+                    <a target="_blank" href="${section.linkPdf}"><button type="button"> descargar pdf </button></a>
+                    ${(section.linkRuta)? '<a target="_blank" href="' + section.linkRuta + '"><button type="button"> Ver ruta </button></a>':""}
+                  </div>
+                  <div id="sec" class="seccion">
+                    <iframe
+                    src="${section.linkRevista}"
+                    width="0"
+                    height="0"
+                    frameborder="0"
+                    scrolling="no"
+                    allowtransparency
+                    allowfullscreen
+                    style="margin: 0 auto"
+                    onload="getWH()"
+                    ></iframe>
+                  </div>
+                </div>`;
+                document.body.innerHTML += ventana;                
+            });
+            svg.appendChild(group);
+          });
+          currentRadius = outerRadius;
+        });
+        document.body.appendChild(svg);
+        window.setTimeout(()=>{document.body.addEventListener("click", processor)}, 100)
+      }
+      function processor(e) {
+        let padre = document.querySelector("svg");
+        let ventana = document.querySelector(".ventana");
+        let hijo = e.target;
+          if((padre.contains(hijo) && (padre == hijo)) || !padre.contains(hijo) || !ventana.contains(hijo)){
+              padre.remove()
+              document.body.removeEventListener("click", processor); 
+              generateBigDona(globlalConfig); 
+          } 
+      }
       function getColor(m = 30) {
         return (Math.floor(Math.random() * m) + 1) * (360 / m);
       }
-      generateDonutChart(config);
 
-      function makeSphere(sphereNumber) {
-        let blurBG = document.createElement("div");
-        let backLine = document.createElement("div");
-        let sphereContainer = document.createElement("div");
-        let imgclose = document.createElement("img");
+      // function makeSphere(sphereNumber) {
+      //   let blurBG = document.createElement("div");
+      //   let backLine = document.createElement("div");
+      //   let sphereContainer = document.createElement("div");
+      //   let imgclose = document.createElement("img");
 
-        blurBG.setAttribute("id", "blur-bg");
-        backLine.setAttribute("class", "back-line");
-        sphereContainer.setAttribute("class", "sphere-container");
-        imgclose.setAttribute("src", "x.svg");
-        imgclose.setAttribute("id", "img-close");
+      //   blurBG.setAttribute("id", "blur-bg");
+      //   backLine.setAttribute("class", "back-line");
+      //   sphereContainer.setAttribute("class", "sphere-container");
+      //   imgclose.setAttribute("src", "x.svg");
+      //   imgclose.setAttribute("id", "img-close");
 
-        sphereContainer.addEventListener("click", close);
-        imgclose.addEventListener("click", close);
+      //   sphereContainer.addEventListener("click", close);
+      //   imgclose.addEventListener("click", close);
 
-        document.body.appendChild(blurBG);
-        document.body.appendChild(backLine);
-        document.body.appendChild(sphereContainer);
-        document.body.appendChild(imgclose);
+      //   document.body.appendChild(blurBG);
+      //   document.body.appendChild(backLine);
+      //   document.body.appendChild(sphereContainer);
+      //   document.body.appendChild(imgclose);
 
-        // sphereContainer.innerHTML = "";
-        let angle = (2 * Math.PI) / sphereNumber;
-        let distance =
-          window.innerWidth < window.innerHeight
-            ? window.innerWidth
-            : window.innerHeight;
-        let radius2 =
-          0.5 *
-          ((0.35 * distance) ** 2 - (0.35 * distance) ** 2 * Math.cos(angle)) **
-            0.5;
-        let len = distance / 2.1 - radius2;
-        let [x_, y_] = [
-          window.innerWidth / 2 - radius2,
-          window.innerHeight / 2 - radius2,
-        ];
+      //   let angle = (2 * Math.PI) / sphereNumber;
+      //   let distance = window.innerWidth < window.innerHeight? window.innerWidth: window.innerHeight;
+      //   let radius2 = 0.5 * ((0.35 * distance) ** 2 - (0.35 * distance) ** 2 * Math.cos(angle)) **0.5;
+      //   let len = distance / 2.1 - radius2;
+      //   let [x_, y_] = [window.innerWidth / 2 - radius2, window.innerHeight / 2 - radius2];
 
-        for (let i = 1; i <= sphereNumber; i++) {
-          let newy = Math.sin(angle * i) * len;
-          let newx = Math.cos(angle * i) * len;
+      //   for (let i = 1; i <= sphereNumber; i++) {
+      //     let newy = Math.sin(angle * i) * len;
+      //     let newx = Math.cos(angle * i) * len;
 
-          let innerDiv = document.createElement("div");
-          innerDiv.setAttribute("class", "sphere");
-          innerDiv.setAttribute(
-            "style",
-            `left: ${x_ + newx}px;top: ${y_ + newy}px;height:${
-              radius2 * 2
-            }px; width:${radius2 * 2}px; background-color: hsl(${i * 360/sphereNumber}deg, 100%, 90%);`
-          );
-          innerDiv.innerHTML += `<section style="font-size:${radius2 * 0.12}px;">
-            <h3><a href="#">Nombre de proceso</a></h3>
-            <button>Descargar pdf</button>
-            <button>Ver ruta</button>
-            </section>`;
-          sphereContainer.appendChild(innerDiv);
-        }
-        let bl = document.querySelector(".back-line");
-        bl.setAttribute("style", `height:${len * 2}px; width:${len * 2}px;`);
+      //     let innerDiv = document.createElement("div");
+      //     innerDiv.setAttribute("class", "sphere");
+      //     innerDiv.setAttribute("style",`left: ${x_ + newx}px;top: ${y_ + newy}px;height:${  radius2 * 2}px; width:${radius2 * 2}px; background-color: hsl(${  (i * 360) / sphereNumber}deg, 100%, 90%);`
+      //     );
+      //     innerDiv.innerHTML += `<section style="font-size:${radius2 * 0.12 }px;"><h3><a href="#">Nombre de proceso</a></h3><button>Descargar pdf</button><button>Ver ruta</button></section>`;
+      //     sphereContainer.appendChild(innerDiv);
+      //   }
+      //   let bl = document.querySelector(".back-line");
+      //   bl.setAttribute("style", `height:${len * 2}px; width:${len * 2}px;`);
+      // }
+      // function close(e) {
+      //   let sc = document.querySelector(".sphere-container");
+      //   let ic = document.querySelector("#img-close");
+      //   if (e.target !== sc && e.target !== ic) return 0;
+      //   document.querySelector("#blur-bg").remove();
+      //   document.querySelector(".back-line").remove();
+      //   document.querySelector("#img-close").remove();
+      //   document.querySelector(".sphere-container").remove();
+      // }
+    </script>
+    <script>
+      async function csvToObject(url) {
+        const response = await fetch(url);
+        const text = await response.text();
+        const rows = text.trim().split("\n");
+        const headers = rows[0].split(",");
+        const data = rows.slice(1).map((row) => {
+          const values = row.split(",");
+          return headers.reduce((obj, header, index) => {obj[header.trim()] = Object.hasOwn(values, index) ? values[index].trim() : ""; 
+            return obj;
+          }, {});
+        });
+        return data;
       }
-      function close(e) {
-        let sc = document.querySelector(".sphere-container");
-        let ic = document.querySelector("#img-close");
-        if(e.target !== sc && e.target !== ic) return 0;
-        document.querySelector("#blur-bg").remove();
-        document.querySelector(".back-line").remove();
-        document.querySelector("#img-close").remove();
-        document.querySelector(".sphere-container").remove();  
-      }
+      csvToObject("info.csv")
+        .then((data) => {
+          const agrupados = data.reduce((acc, item) => {
+            if (!acc[item.MACROPROCESO]) { acc[item.MACROPROCESO] = new Array;}
+            acc[item.MACROPROCESO].push(item);
+            return acc;
+          }, {});
+          return agrupados;
+          // return Object.values(agrupados);
+        })
+        .then((data) => {
+          setGoblalData(data);
+          let DATAOBJECT = new Object;
+          let newLevel = new Object;
+          newLevel.sectionsNumber = Object.values(data).length;
+          let tempData = new Array;
+          for (const key in data) {
+            tempData.push({label: key, innerInfo:data[key]});
+          }
+          newLevel.sectionsInfo = tempData;
+          
+          DATAOBJECT.levels = [newLevel];
+          return DATAOBJECT;
+        })
+        .then((data) => {
+          let indice = 0.3;
+          let size = getSize("distanceAvaliable");
+          data.innerRadius =  size * (1-indice);
+          data.width = size ;
+          data.height = size ;
+          data.thickness = size * (indice/2);
+          setGloblalConfig(data)
+          generateBigDona(data);
+        });
     </script>
   </body>
 </html>
