@@ -92,6 +92,23 @@ text {
   font-size: 1.5rem;
   text-transform: uppercase;
 }
+g[special]{
+  /* cursor: not-allowed; */
+  cursor: auto;
+}
+text[special="ESTRATÉGICOS"] {
+  fill: var(--color-macro-estratégico);
+}
+text[special="MISIONALES"] {
+  fill: var(--color-macro-misional);
+}
+text[special="SOPORTE"] {
+  fill: var(--color-macro-soporte);
+}
+text[special="CONTROL Y EVALUACIÓN"] {
+  fill: var(--color-macro-control-y-evaluacion);
+}
+          
 g {
   cursor: pointer;
 }
@@ -159,6 +176,7 @@ button {
     --color-light-blue: #89DAFF55;
     --color-pink: #F45B69;
     --color-pink-transparent: #F45B6930;
+    --color-pink-transparent-2: #F45B6915;
     --color-transparent: #0000;}
 /* body {
     display: flex;
@@ -193,6 +211,7 @@ button {
     border-radius: 20px;
     cursor: pointer;
     outline: .5rem dashed var(--color-transparent);
+    background-color: var(--color-pink-transparent-2);
 }
 .block:hover {
     background-color: var(--color-pink-transparent);
@@ -212,7 +231,7 @@ button {
         justify-content: center;
 }
 .block p{
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-align: center;
     font-size: 2rem;
 }
@@ -236,6 +255,9 @@ button {
   padding: .5rem;
   text-transform: uppercase;
   cursor: pointer;
+}
+.menu p:nth-child(3){
+  cursor: default;
 }
 .hidden{
   display: none;

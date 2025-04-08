@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Circle - Grid</title>
+    <title>Circle - Grid - Master</title>
     <link rel="stylesheet" href="../reset.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -64,7 +64,7 @@
           let block = document.createElement("div");
           block.setAttribute("class", "block");
           let innerDiv = document.createElement("div");
-          innerDiv.innerHTML = `<p>${el["NOMBRE GUÍA"]}</p>`;
+          innerDiv.innerHTML = `<p>${el["NOMBRE GUÍA"].toLowerCase()}</p>`;
           block.appendChild(innerDiv);
           gridC.appendChild(block);
           block.addEventListener("click",()=>{
@@ -140,7 +140,7 @@
             const y4 = centerY + currentRadius * Math.sin(endAngle);
             const d = `M ${x1} ${y1} L ${x2} ${y2} A ${outerRadius} ${outerRadius} 0 ${largeArc} 1 ${x3} ${y3}        L ${x4} ${y4} A ${currentRadius} ${currentRadius} 0 ${largeArc} 0 ${x1} ${y1} Z`;
             path.setAttribute("d", d);
-            path.setAttribute("fill", `${section.color}`);
+            path.setAttribute("fill", `${section.color}`);            
             path.setAttribute("stroke", "#fff");
             path.setAttribute("stroke-width", "5");
             const textPathId = `textPath-${levelIndex}-${i}`;
@@ -166,6 +166,9 @@
             );
             defs.appendChild(textArc);
             const textElement = document.createElementNS(svgNS, "text");
+            if (section.title) {
+              textElement.setAttribute("special", section.label);
+            }
             const textPath = document.createElementNS(svgNS, "textPath");
             textPath.setAttribute("href", `#${textPathId}`);
             textPath.setAttribute("startOffset", "50%");
@@ -174,23 +177,28 @@
             textPath.textContent = section.label.toUpperCase();
             textElement.appendChild(textPath);
             const group = document.createElementNS(svgNS, "g");
+            if (section.title) {
+              group.setAttribute("special", section.label);
+            }
             group.appendChild(path);
             group.appendChild(textElement);
-            group.addEventListener("mouseover", () =>
-              path.setAttribute("fill", "#222")
-            );
-            group.addEventListener("mouseout", () =>
-              path.setAttribute("fill", `${section.color}`)
-            );
-            group.addEventListener("click", () => {
-              if (section.title == true) return false;
-              csvToObjectLocal("../info.csv", section.label).then((d) => {
-                document.querySelector("svg").remove();
-                drawBox(d);
-                setGoblal("config_for_draw_box", d);
+            if(!section.title){
+              group.addEventListener("mouseover", () =>
+                path.setAttribute("fill", "#222")
+              );
+              group.addEventListener("mouseout", () =>
+                path.setAttribute("fill", `${section.color}`)
+              );
+              group.addEventListener("click", () => {
+                if (section.title == true) return false;
+                csvToObjectLocal("../info.csv", section.label).then((d) => {
+                  document.querySelector("svg").remove();
+                  drawBox(d);
+                  setGoblal("config_for_draw_box", d);
 
+                });
               });
-            });
+            }
             svg.appendChild(group);
           });
           currentRadius = outerRadius;
@@ -311,23 +319,28 @@
             return { label: e, title: false };
           });
           let text = "";
-          if (e.titulo == "ESTRATÉGICO") text = "MACROPROCESOS ESTRATÉGICOS";
-          if (e.titulo == "MISIONAL") text = "MACROPROCESOS MISIONALES";
-          if (e.titulo == "SOPORTE") text = "MACROPROCESOS DE SOPORTE";
+          if (e.titulo == "ESTRATÉGICO") text = "ESTRATÉGICOS";
+          if (e.titulo == "MISIONAL") text = "MISIONALES";
+          if (e.titulo == "SOPORTE") text = "SOPORTE";
           if (e.titulo == "CONTROL Y EVALUACIÓN")
-            text = "MACROPROCESOS DE CONTROL Y EVALUACIÓN";
+            text = "CONTROL Y EVALUACIÓN";
           innerInfo.push({ label: text, title: true });
 
           e.sectionsInfo = innerInfo;
         });
 
         function setColor(b, p) {
-          if (b) return "#222";
-          if (p == "ESTRATÉGICO") return "var(--color-macro-estratégico)";
-          if (p == "MISIONAL") return "var(--color-macro-misional)";
-          if (p == "SOPORTE") return "var(--color-macro-soporte)";
-          if (p == "CONTROL Y EVALUACIÓN")
-            return "var(--color-macro-control-y-evaluacion)";
+          if (b) {
+            if (p == "ESTRATÉGICO") return "#ffe4c5";
+            if (p == "MISIONAL") return "#ffb6b9";
+            if (p == "SOPORTE") return "#e4ffc0";
+            if (p == "CONTROL Y EVALUACIÓN") return "#c3fffb";            
+          }else{
+            if (p == "ESTRATÉGICO") return "var(--color-macro-estratégico)";
+            if (p == "MISIONAL") return "var(--color-macro-misional)";
+            if (p == "SOPORTE") return "var(--color-macro-soporte)";
+            if (p == "CONTROL Y EVALUACIÓN") return "var(--color-macro-control-y-evaluacion)";
+          }
         }
 
         levels.forEach((e, i) => {
