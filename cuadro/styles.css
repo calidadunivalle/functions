@@ -231,9 +231,12 @@ button {
         justify-content: center;
 }
 .block p{
-    text-transform: capitalize;
-    text-align: center;
-    font-size: 2rem;
+  text-transform: lowercase;
+  text-align: center;
+  font-size: 2rem;
+}
+.block p::first-letter{
+text-transform: capitalize;
 }
 .info{
   font-size: 1.2rem;
