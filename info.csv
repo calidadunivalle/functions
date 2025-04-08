@@ -1,46 +1,22 @@
-MACROPROCESO,PROCESO,GUIA,PDF,REVISTA,RUTA,ESTADO,VISIBILIDAD ,DEPENDENCIA ,RESPONSABLE 
-reuniones,reunión del consejo,GUIA PARA EL PROCEDIMIENTO DE LA PROGRAMACIÓN DE LA REUNIÓN DEL CONSEJO DE LA FACULTAD DE SALUD.,https://drive.google.com/file/d/1X4UcsduF1cCer5I2_d66hy66FHAzxmw8/view?usp=sharing,//v.calameo.com/?bkcode=007858952ce05937ba115,,Finalizado,TRUE,,
-reuniones,nombre ejemplo 1,nombre completo de guía 2,https://example.com/,https://example.com/,https://example.com/,En elaboración,TRUE,dependencia 15,xxxxxxxxx
-nombre 1,nombre clave  4,nombre completo de guía 4,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 4,xxxxxxxxx
-nombre 3,nombre clave  5,nombre completo de guía 5,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 11,xxxxxxxxx
-nombre 2,nombre clave  6,nombre completo de guía 6,https://example.com/,https://example.com/,https://example.com/,En revisión,TRUE,dependencia 7,xxxxxxxxx
-nombre 2,nombre clave  7,nombre completo de guía 7,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 1,xxxxxxxxx
-nombre 2,nombre clave  8,nombre completo de guía 8,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,FALSE,dependencia 12,xxxxxxxxx
-nombre 3,nombre clave  9,nombre completo de guía 9,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,FALSE,dependencia 8,xxxxxxxxx
-nombre 5,nombre clave  10,nombre completo de guía 10,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 8,xxxxxxxxx
-nombre 2,nombre clave  11,nombre completo de guía 11,https://example.com/,https://example.com/,https://example.com/,En revisión GP,TRUE,dependencia 13,xxxxxxxxx
-nombre 4,nombre clave  12,nombre completo de guía 12,https://example.com/,https://example.com/,https://example.com/,En revisión GP,TRUE,dependencia 16,xxxxxxxxx
-nombre 1,nombre clave  13,nombre completo de guía 13,https://example.com/,https://example.com/,https://example.com/,En revisión GP,TRUE,dependencia 11,xxxxxxxxx
-nombre 4,nombre clave  14,nombre completo de guía 14,https://example.com/,https://example.com/,https://example.com/,En revisión GP,TRUE,dependencia 10,xxxxxxxxx
-nombre 4,nombre clave  15,nombre completo de guía 15,https://example.com/,https://example.com/,https://example.com/,En elaboración,FALSE,dependencia 9,xxxxxxxxx
-nombre 2,nombre clave  16,nombre completo de guía 16,https://example.com/,https://example.com/,https://example.com/,En elaboración,TRUE,dependencia 15,xxxxxxxxx
-nombre 2,nombre clave  17,nombre completo de guía 17,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 8,xxxxxxxxx
-nombre 5,nombre clave  18,nombre completo de guía 18,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 6,xxxxxxxxx
-nombre 4,nombre clave  19,nombre completo de guía 19,https://example.com/,https://example.com/,https://example.com/,En elaboración,TRUE,dependencia 13,xxxxxxxxx
-nombre 2,nombre clave  20,nombre completo de guía 20,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 10,xxxxxxxxx
-nombre 1,nombre clave  21,nombre completo de guía 21,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 12,xxxxxxxxx
-nombre 3,nombre clave  22,nombre completo de guía 22,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 4,xxxxxxxxx
-nombre 4,nombre clave  23,nombre completo de guía 23,https://example.com/,https://example.com/,https://example.com/,En revisión,TRUE,dependencia 8,xxxxxxxxx
-nombre 4,nombre clave  24,nombre completo de guía 24,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,FALSE,dependencia 10,xxxxxxxxx
-nombre 4,nombre clave  25,nombre completo de guía 25,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 12,xxxxxxxxx
-nombre 2,nombre clave  26,nombre completo de guía 26,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 16,xxxxxxxxx
-nombre 5,nombre clave  27,nombre completo de guía 27,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 10,xxxxxxxxx
-nombre 3,nombre clave  28,nombre completo de guía 28,https://example.com/,https://example.com/,https://example.com/,En revisión GP,TRUE,dependencia 11,xxxxxxxxx
-nombre 3,nombre clave  29,nombre completo de guía 29,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 14,xxxxxxxxx
-nombre 4,nombre clave  30,nombre completo de guía 30,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 2,xxxxxxxxx
-nombre 2,nombre clave  31,nombre completo de guía 31,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 2,xxxxxxxxx
-nombre 2,nombre clave  32,nombre completo de guía 32,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 11,xxxxxxxxx
-nombre 4,nombre clave  33,nombre completo de guía 33,https://example.com/,https://example.com/,https://example.com/,En revisión,TRUE,dependencia 10,xxxxxxxxx
-nombre 4,nombre clave  34,nombre completo de guía 34,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 0,xxxxxxxxx
-nombre 3,nombre clave  35,nombre completo de guía 35,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 4,xxxxxxxxx
-nombre 3,nombre clave  36,nombre completo de guía 36,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,FALSE,dependencia 6,xxxxxxxxx
-nombre 2,nombre clave  37,nombre completo de guía 37,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 12,xxxxxxxxx
-nombre 3,nombre clave  38,nombre completo de guía 38,https://example.com/,https://example.com/,https://example.com/,En revisión GP,TRUE,dependencia 0,xxxxxxxxx
-nombre 5,nombre clave  39,nombre completo de guía 39,https://example.com/,https://example.com/,https://example.com/,En revisión GP,TRUE,dependencia 5,xxxxxxxxx
-nombre 1,nombre clave  40,nombre completo de guía 40,https://example.com/,https://example.com/,https://example.com/,En revisión GP,TRUE,dependencia 9,xxxxxxxxx
-nombre 4,nombre clave  41,nombre completo de guía 41,https://example.com/,https://example.com/,https://example.com/,En revisión GP,TRUE,dependencia 14,xxxxxxxxx
-nombre 1,nombre clave  42,nombre completo de guía 42,https://example.com/,https://example.com/,https://example.com/,En elaboración,TRUE,dependencia 4,xxxxxxxxx
-nombre 2,nombre clave  43,nombre completo de guía 43,https://example.com/,https://example.com/,https://example.com/,En elaboración,FALSE,dependencia 12,xxxxxxxxx
-nombre 2,nombre clave  44,nombre completo de guía 44,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 8,xxxxxxxxx
-nombre 5,nombre clave  45,nombre completo de guía 45,https://example.com/,https://example.com/,https://example.com/,No ha iniciado,TRUE,dependencia 7,xxxxxxxxx
-nombre 3,nombre clave  46,nombre completo de guía 46,https://example.com/,https://example.com/,https://example.com/,En elaboración,TRUE,dependencia 5,xxxxxxxxx
+MACROPROCESO,PROCESO,  NOMBRE GUÍA,PDF,REVISTA,RUTA,ESTADO,VISIBILIDAD ,DEPENDENCIA ,RESPONSABLE 
+SOPORTE,Gestión de laboratorios,Ejecución de mantenimientos preventivos y correctivos para los equipos laboratorios y HUV de la facultad de salud ,https://example.com/,https://example.com/,https://example.com/,EN ELABORACIÓN,TRUE,Calidad Laboratorios,Profesional Gestión Calidad Laboratorios
+SOPORTE,Gestión de laboratorios,"Requerimientos (Insumos, equipos) de los laboratorios de la facultad de salud.",https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,TRUE,Calidad Laboratorios,
+SOPORTE,Gestión de laboratorios,Evaluación tecnología para proyectos institucionales. ,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,TRUE,Calidad Laboratorios,
+SOPORTE,Gestión de laboratorios,Gestión del sistema integrado de calidad de la Facultad de Salud,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,TRUE,Calidad Laboratorios,
+MISIONAL,Vinculación con la sociedad,Desarrollo de ofertas de educación continua de la facultad de salud. ,https://example.com/,https://example.com/,https://example.com/,EN REVISIÓN,TRUE,OEPS,Profesional  OEPS
+MISIONAL,Vinculación con la sociedad,Trámite y gestión de descuento a fondo común,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,TRUE,OEPS,
+MISIONAL,Vinculación con la sociedad,Trámite y gestión de reclasificaciones,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,TRUE,OEPS,
+MISIONAL,Vinculación con la sociedad,Revisión y diligenciamiento de Sarlaft,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,TRUE,OEPS,
+MISIONAL,Vinculación con la sociedad,Gestión logístico-administrativa de convenios y contratos,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,TRUE,OEPS,
+,,Programación Consejo de Facultad.,https://example.com/,https://example.com/,https://example.com/,EN REVISIÓN,FALSE,Decanato,Profesional SIAC 
+,,Solicitud de Designación de cargos académicos administrativos,https://example.com/,https://example.com/,https://example.com/,EN REVISIÓN,FALSE,Decanato,Profesional SIAC 
+,,Cambio de dedicación de docentes.,https://example.com/,https://example.com/,https://example.com/,EN REVISIÓN,FALSE,Decanato,Profesional SIAC 
+,,Solicitud de encargaturas,https://example.com/,https://example.com/,https://example.com/,EN REVISIÓN,FALSE,Decanato,Profesional SIAC 
+MISIONAL,Gestión del conocimiento,Aprobación de proyectos de investigación de Docentes Nombrados de la Facultad de Salud - Convocatoria externa,https://example.com/,https://example.com/,https://example.com/,EN ELABORACIÓN,TRUE,Vic Investigaciones,Monitora VI
+MISIONAL,Gestión del conocimiento,Aprobación de proyectos de investigación de Docentes Nombrados de la Facultad de Salud - Convocatoria interna ,https://example.com/,https://example.com/,https://example.com/,EN ELABORACIÓN,TRUE,Vic Investigaciones,Monitora VI
+MISIONAL,Gestión del conocimiento,Aprobación de proyectos de investigación de Docentes Nombrados de la Facultad de Salud - Presentación interna,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,TRUE,Vic Investigaciones,
+MISIONAL,Gestión del conocimiento,Aprobación de proyectos de investigación de estudiantes de pregrado y postgrado de la Facultad de Salud,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,TRUE,Vic Investigaciones,
+ESTRATÉGICO,Proyección internacional,Movilidad estudiantil internacional  para estudiantes de la Facultad de Salud ( Saliente y entrante),https://example.com/,https://example.com/,https://example.com/,,TRUE,Asuntos internacionales,Profesional  OAI
+ESTRATÉGICO,Proyección internacional,Movilidad estudiantil internacional entrante para estudiantes de la Facultad de Salud,https://example.com/,https://example.com/,https://example.com/,,TRUE,Asuntos internacionales,Profesional  OAI
+ESTRATÉGICO,Proyección internacional,Legalización de convenios internacionales,https://example.com/,https://example.com/,https://example.com/,,TRUE,Asuntos internacionales,Profesional  OAI
+,,Evaluación de Asignaturas ,https://example.com/,https://example.com/,https://example.com/,,FALSE,Oficina de Aseguramiento de la Calidad Facultad de Salud             ,Profesional SIAC 
