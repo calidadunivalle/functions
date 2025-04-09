@@ -15,25 +15,16 @@
     </div>
     <script>
       
-      // document.querySelector(".menu").children[0].addEventListener("click", ()=> {
-      //   document.querySelector(".grid-container").remove();
-      //   generateBigDona(globlal.config_for_big_dona);
-      // });
       function controladorDeProceso() {
         document.querySelector(".grid-container")?.remove();
         document.querySelector(".ventana")?.remove();
         document.querySelector(".menu").children[2].classList.add("hidden");
         generateBigDona(globlal.config_for_big_dona);
       }
-      // document.querySelector(".menu").children[1].addEventListener("click", ()=> {
-      //   document.querySelector(".grid-container").remove();
-      //   generateBigDona(globlal.config_for_big_dona);
-      // });
       let globlal = {};
       function deleteWindow() {
         document.querySelector(".ventana").remove();
         document.querySelector(".menu").children[2].classList.add("hidden");
-        console.log(document.querySelector(".menu").children[2]);
         
         drawBox(globlal.config_for_draw_box);
       }
@@ -71,18 +62,6 @@
             gridC.remove();
             document.querySelector(".menu").children[2].innerText = el["NOMBRE GUÍA"];
             document.querySelector(".menu").children[2].classList.remove("hidden");
-            /*
-            DEPENDENCIA: "Asuntos internacionales"
-            ESTADO: ""
-            MACROPROCESO: "ESTRATÉGICO"
-            "NOMBRE GUÍA": "Movilidad estudiantil internacional  para estudiantes de la Facultad de Salud ( Saliente y entrante)"
-            PDF: ""
-            PROCESO: "Proyección internacional"
-            RESPONSABLE: "Profesional  OAI"
-            REVISTA: ""
-            RUTA: ""
-            VISIBILIDAD: "TRUE"
-            */
              let ventana =
                     `<div class="ventana">
                       <div class="seccion">
@@ -274,12 +253,13 @@
         const response = await fetch(url);
         let csv = await response.text();
         const lines = csv.trim().split("\n");
-        const headers = lines[0].split(",");
+        const headers = lines[0].split(",").map(e=>e.trim());
+        let indexOfVisivilidad = headers.indexOf("VISIBILIDAD");
         const data = lines.slice(1);
         let listadoMacro = {};
         data.forEach((line) => {
           const values = line.split(",");
-          if (values[7] == "TRUE") {
+          if (values[indexOfVisivilidad] == "TRUE") {
             let row = {};
             headers.forEach((header, index) => {
               row[header.trim()] = values[index] ? values[index].trim() : "";
@@ -359,7 +339,6 @@
 
         generateBigDona(c);
         setGoblal("config_for_big_dona", c);
-        // console.log(JSON.stringify(levels, null, 2));
       });
     </script>
   </body>

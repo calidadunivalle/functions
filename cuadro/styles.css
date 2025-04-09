@@ -254,7 +254,7 @@ text-transform: capitalize;
   z-index: 8;
 }
 .menu p{
-  font-size: 1rem;
+  font-size: 1.8rem;
   padding: .5rem;
   text-transform: uppercase;
   cursor: pointer;
