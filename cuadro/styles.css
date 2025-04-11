@@ -147,6 +147,7 @@ button {
     width:  80vw;
     height: 90vh;
     gap: 1rem;
+    align-self: flex-end;
     background-color: var(--color-white);
     padding:min(2vw, 2vh);
     /* background-color: black; */
@@ -202,17 +203,26 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  gap: 1rem;
+  gap: 2rem;
   z-index: 8;
 }
 .menu p{
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   padding: .5rem;
   text-transform: uppercase;
   cursor: pointer;
+  padding-bottom: .5rem;
+  align-self: flex-end;
+  border-bottom: 2px dashed #333;
+  background-color: #3330;
+}
+.menu p:hover{
+  background-color: #3331;
 }
 .menu p:nth-child(3){
   cursor: default;
+  border-bottom: 0;
+  background-color: #3330;
 }
 .hidden{
   display: none;
