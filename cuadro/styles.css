@@ -22,54 +22,6 @@ body {
   box-sizing: border-box;
   transition: all, 0.3s ease-out;
 }
-/*
-div.sphere-container {
-  z-index: 2;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  font-size: 5%;
-}
-.sphere * {
-  text-align: center;
-}
-.sphere {
-  border-radius: 50%;
-  position: fixed;
-  z-index: 4;
-  display: flex;
-  outline: 0.4rem dashed #0002;
-  outline-offset: 0.1rem;
-  justify-content: center;
-}
-.sphere:hover {
-  background-color: var(--color-solid-pink-ligth);
-  outline: 0.4rem dashed #0008;
-  outline-offset: 0.2rem;
-}
-.back-line {
-  border-radius: 50%;
-  position: fixed;
-  z-index: 1;
-  border: 3rem double #22485150;
-}
-.sphere-container section {
-  display: flex;
-  flex-direction: column;
-  padding: 20%;
-  justify-content: center;
-  align-items: center;
-}#blur-bg {
-  display: block;
-  position: fixed;
-  z-index: 1;
-  background-color: #fffe;
-  backdrop-filter: blur(.7rem);  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-}
-*/
 @keyframes rotateAnimation {
   from {
     transform: rotate(0deg);
@@ -126,12 +78,12 @@ g {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 100%;
   z-index: 7;
   background: white;
 }
 .seccion:first-child {
-  flex-direction: column;
+  flex-direction: row;
   justify-content:space-evenly
 }
 .seccion {
@@ -153,14 +105,14 @@ button {
   font-size: 2.5rem;
   font-family: inherit;
   text-transform: uppercase;
-  padding: .5rem .5rem;
+  padding: .7rem 4rem;
   border-width: 2px;
   border-color: #fff;
-  border-radius: 15px;
+  border-radius: 3rem;
   background: #fff4;
   border-style: solid;
   color: #333;
-  width: 80%;
+  /* width: 80%; */
 }
   
   button:hover {
@@ -231,12 +183,12 @@ button {
         justify-content: center;
 }
 .block p{
-  text-transform: lowercase;
-  text-align: center;
-  font-size: 2rem;
+    text-transform: lowercase;
+    text-align: center;
+    font-size: 2rem;
 }
 .block p::first-letter{
-text-transform: capitalize;
+  text-transform: capitalize;
 }
 .info{
   font-size: 1.2rem;
