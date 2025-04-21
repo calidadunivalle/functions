@@ -50,13 +50,21 @@
 
         let gridC = document.createElement("div");
         gridC.setAttribute("class", "grid-container");
+        let aside = document.createElement("span");
+        gridC.appendChild(aside);
+        aside.setAttribute("class", "aside");
+        aside.setAttribute("onclick", "controladorDeProceso()");
+        aside.innerHTML=`&times;`;
         document.body.appendChild(gridC);        
         data.forEach((el) => {
           let block = document.createElement("div");
           block.setAttribute("class", "block");
-          let innerDiv = document.createElement("div");
-          innerDiv.innerHTML = `<p>${el["NOMBRE GUÍA"].toLowerCase()}</p>`;
-          block.appendChild(innerDiv);
+          // let innerDiv = document.createElement("div");
+          // innerDiv.innerHTML = `<p>${el["NOMBRE GUÍA"].toLowerCase()}</p>`;
+          // block.appendChild(innerDiv);
+         
+          block.innerHTML = `<p>${el["NOMBRE GUÍA"].toLowerCase()}</p>`;
+         
           gridC.appendChild(block);
           block.addEventListener("click",()=>{
             gridC.remove();
@@ -76,7 +84,7 @@
       }
       function generateBigDona(config) {
         document.querySelector(".menu").classList.add("hidden");
-        console.log(document.querySelector(".menu"));
+     //   console.log(document.querySelector(".menu"));
         
         const svgNS = "http://www.w3.org/2000/svg";
         const svg = document.createElementNS(svgNS, "svg");

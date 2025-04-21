@@ -15,6 +15,7 @@ body {
   --color-macro-soporte: #8cc63f;
   --color-macro-misional: #c1272d;
   --color-macro-estratégico: #f7931e;
+  font-size: calc(min(100vh,100vw) * 0.035);
 }
 * {
   margin: 0;
@@ -39,10 +40,8 @@ svg {
 text {
   fill: white;
   font-family: sans-serif;
-  /* font-size: calc(min(100vw, 100vh) / 30); */
-  /* font-size: larger; */
-  font-size: 1.5rem;
   text-transform: uppercase;
+  font-size: calc(min(100vh,100vw) * 0.02);
 }
 g[special]{
   /* cursor: not-allowed; */
@@ -64,13 +63,6 @@ text[special="CONTROL Y EVALUACIÓN"] {
 g {
   cursor: pointer;
 }
-/* img {
-  width: calc(min(100vw, 100vh) / 10);
-  position: fixed;
-  z-index: 5;
-  right: calc(min(100vw, 100vh) / 20);
-  top: calc(min(100vw, 100vh) / 20);
-} */
 .ventana {
   position: fixed;
   top: 0;
@@ -84,13 +76,13 @@ g {
 }
 .seccion:first-child {
   flex-direction: row;
-  justify-content:space-evenly
+  gap: calc(min(100vh,100vw) * 0.05);
+  /* justify-content:space-evenly */
 }
 .seccion {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
   font-weight: bold;
 }
 .seccion > button:first-child {
@@ -102,7 +94,6 @@ color: #fff;
   margin-top: 5vh;
 }
 button {
-  font-size: 2.5rem;
   font-family: inherit;
   text-transform: uppercase;
   padding: .7rem 4rem;
@@ -111,6 +102,7 @@ button {
   border-radius: 3rem;
   background: #fff4;
   border-style: solid;
+  
   color: #333;
   /* width: 80%; */
 }
@@ -130,28 +122,25 @@ button {
     --color-pink-transparent: #F45B6930;
     --color-pink-transparent-2: #F45B6915;
     --color-transparent: #0000;}
-/* body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;    font-family: "Oswald", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-} */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* width: min(95vw, 95vh);
-    height: min(95vw, 95vh); */
     width:  80vw;
     height: 90vh;
     gap: 1rem;
     align-self: flex-end;
     background-color: var(--color-white);
     padding:min(2vw, 2vh);
-    /* background-color: black; */
-    /* padding: 5px; */
+}
+.aside{
+  position: fixed;
+  right: 0;
+  top: calc(min(8vh,8vw) * -1);
+  z-index: 9;
+  font-size: calc(min(100vh,100vw) * 0.2);
+  padding: 1%;
+  cursor: pointer;
+  
 }
 .block {
     background-color: var(--color-transparent);
@@ -184,15 +173,15 @@ button {
         justify-content: center;
 }
 .block p{
-    text-transform: lowercase;
     text-align: center;
-    font-size: 2rem;
+    height: fit-content;
+    align-self: center;
+    font-size: calc(inherit * 0.5);
 }
 .block p::first-letter{
   text-transform: capitalize;
 }
 .info{
-  font-size: 1.2rem;
   padding: 2vw;
   font-weight: initial;
 }
@@ -207,7 +196,6 @@ button {
   z-index: 8;
 }
 .menu p{
-  font-size: 2.5rem;
   padding: .5rem;
   text-transform: uppercase;
   cursor: pointer;
