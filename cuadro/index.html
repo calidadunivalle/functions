@@ -72,8 +72,9 @@
             document.querySelector(".menu").children[2].classList.remove("hidden");
              let ventana =
                     `<div class="ventana">
+                      <span class="aside" onclick="deleteWindow()">×</span>
                       <div class="seccion">
-                        <button type="button" onclick="deleteWindow()"> Cerrar </button>
+                        <!-- <button type="button" onclick="deleteWindow()"> Cerrar </button> -->
                         <a target="_blank" href="${el.PDF}"><button type="button"> descargar pdf </button></a>
                         <a target="_blank" href="${el.REVISTA}"><button type="button"> Abrir revista </button></a>
                         ${(el.RUTA)? '<a target="_blank" href="' + el.RUTA + '"><button type="button"> Ver ruta </button></a>':""}
@@ -84,7 +85,7 @@
       }
       function generateBigDona(config) {
         document.querySelector(".menu").classList.add("hidden");
-     //   console.log(document.querySelector(".menu"));
+        console.log(document.querySelector(".menu"));
         
         const svgNS = "http://www.w3.org/2000/svg";
         const svg = document.createElementNS(svgNS, "svg");
