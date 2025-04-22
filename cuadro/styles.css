@@ -83,34 +83,50 @@ g {
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-items: center;
   font-weight: bold;
-}
-.seccion > button:first-child {
-background-color: #bd1522;
-color: #fff;
+  gap: 5vw;
+
 }
 #sec{
   height: 95vh;
   margin-top: 5vh;
 }
 button {
+  /* font-family: inherit;
+  text-transform: uppercase;
+  padding: 1.2rem 1.5rem;
+  border-radius: 5rem;
+  border-style: solid;
+  background-color: #bd1522;
+  color: #fff; */
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+a img{
+  width: 3rem;
+  filter: invert();
+}
+
+a {
   font-family: inherit;
   text-transform: uppercase;
-  padding: .7rem 1rem;
-  border-width: 2px;
-  border-color: #fff;
-  border-radius: 3rem;
-  background: #fff4;
+  padding: 1.2rem 1.5rem;
+  border-radius: 5rem;
   border-style: solid;
-  
-  color: #333;
-  /* width: 80%; */
-}
-  
-  button:hover {
-  border-color: #000;
-  background: #888;
+  background-color: #bd1522;
   color: #fff;
+  text-decoration: none;
+}
+
+/* button:hover {
+  background-color: #bd1522dd;
+  padding: 1.8rem 1.5rem;
+} */
+a:hover {
+  background-color: #8d0f19;
+  padding: 1.8rem 1.5rem;
 }
 :root{
     --color-white: #fff;
@@ -139,13 +155,11 @@ button {
   z-index: 9;
   font-size: calc(min(100vh,100vw) * 0.2);
   padding: 1%;
-  cursor: pointer;
-  
+  cursor: pointer; 
 }
 .block {
     background-color: var(--color-transparent);
     transition: all, .5s ;
-    /* outline: 3px dotted var(--color-purple); */
     display: flex;
     justify-content: center;
     padding: 1vw;
