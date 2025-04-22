@@ -41,7 +41,7 @@ text {
   fill: white;
   font-family: sans-serif;
   text-transform: uppercase;
-  font-size: calc(min(100vh,100vw) * 0.031);
+  font-size: calc(min(100vh,100vw) * 0.025);
 }
 g[special]{
   /* cursor: not-allowed; */
