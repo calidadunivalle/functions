@@ -215,16 +215,12 @@ a:hover {
   cursor: pointer;
   padding-bottom: .5rem;
   align-self: flex-end;
-  border-bottom: 2px dashed #333;
-  background-color: #3330;
 }
 .menu p:hover{
-  background-color: #3331;
+  background-color: #8d0f1950;
 }
 .menu p:nth-child(3){
   cursor: default;
-  border-bottom: 0;
-  background-color: #3330;
 }
 .hidden{
   display: none;

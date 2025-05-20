@@ -181,6 +181,15 @@
         });
         document.body.appendChild(svg);
       }
+      /* 
+      <a target="_blank" href="${
+                      section.linkPdf
+                    }"><button type="button">  Descargar pdf </button></a>
+                    <a target="_blank" href="${
+                      section.linkRevista
+                    }">
+                    <button type="button"> Abrir revista </button></a>
+                    */
       function generateBoxes(config) {
         config.levels.forEach((level, levelIndex) => {
           level.sectionsInfo.forEach((section, i) => {
@@ -188,21 +197,37 @@
               let ventana = `<div class="ventana">
                   <div class="seccion">
                     <button type="button" onclick="deleteWindow()"> Cerrar </button>
-                    <a target="_blank" href="${
+                    ${
                       section.linkPdf
-                    }"><button type="button">  descargar pdf </button></a>
-                    <a target="_blank" href="${
+                        ? '<a target="_blank" href="' +
+                          section.linkPdf +
+                          '"><button type="button"> Descargar pdf </button></a>'
+                        : ""
+                    }
+                    ${
                       section.linkRevista
-                    }"><button type="button"> Abrir revista </button></a>
+                        ? '<a target="_blank" href="' +
+                          section.linkRevista +
+                          '"><button type="button"> Abrir revista </button></a>'
+                        : ""
+                    }
                     ${
                       section.linkRuta
                         ? '<a target="_blank" href="' +
                           section.linkRuta +
-                          '"><button type="button"> Ver ruta </button></a>'
+                          '"><button type="button"> Ver Ruta metodológica </button></a>'
                         : ""
                     }
                   </div>
-                  <div id="sec" class="seccion">
+                  
+                </div>`;
+              document.body.innerHTML += ventana;
+            });
+          });
+        });
+      }
+      /**
+       <div id="sec" class="seccion">
                     <iframe
                       src="${section.linkRevista}"
                       width="0"
@@ -215,12 +240,7 @@
                       onload="getWH()"
                     ></iframe>
                   </div>
-                </div>`;
-              document.body.innerHTML += ventana;
-            });
-          });
-        });
-      }
+      */
       async function csvToObjectLocal(url, filter) {
         const response = await fetch(url);
         const text = await response.text();
