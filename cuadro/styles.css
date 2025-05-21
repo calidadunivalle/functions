@@ -107,6 +107,7 @@ button {
 a img{
   width: 3rem;
   filter: invert();
+  margin: 10px;
 }
 
 a {
@@ -118,6 +119,7 @@ a {
   background-color: #bd1522;
   color: #fff;
   text-decoration: none;
+  text-align: center;
 }
 
 /* button:hover {
