@@ -82,10 +82,10 @@ g {
 .seccion {
   display: flex;
   align-items: center;
-  justify-content: center;
-  justify-items: center;
+  justify-content: end;
   font-weight: bold;
   gap: 5vw;
+  flex-direction: column;
 
 }
 #sec{
@@ -216,7 +216,7 @@ a:hover {
   text-transform: uppercase;
   cursor: pointer;
   padding-bottom: .5rem;
-  align-self: flex-end;
+  align-self: center;
 }
 .menu p:hover{
   background-color: #8d0f1950;
