@@ -82,7 +82,7 @@ g {
 .seccion {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
   font-weight: bold;
   gap: 5vw;
   flex-direction: column;
