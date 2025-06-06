@@ -1,24 +1,44 @@
-MACROPROCESO,PROCESO,NOMBRE GUÍA,PDF,REVISTA,RUTA,ESTADO,OBSERVACIONES,FORMATO WORD ACTUALIZADO,FORMATO PDF ACTUALIZADO,FORMATO REVISTA ACTUALIZADO,VISIBILIDAD,DEPENDENCIA,RESPONSABLE
-MISIONAL,Gestión del conocimiento,Aprobación de proyectos de investigación de Docentes Nombrados de la Facultad de Salud - Convocatoria externa,https://example.com/,https://example.com/,https://example.com/,EN ELABORACIÓN,,,,,TRUE,Vic Investigaciones,Monitora VI
-MISIONAL,Gestión del conocimiento,Aprobación de proyectos de investigación de Docentes Nombrados de la Facultad de Salud - Convocatoria interna ,https://example.com/,https://example.com/,https://example.com/,EN ELABORACIÓN,,,,,TRUE,Vic Investigaciones,Monitora VI
-MISIONAL,Gestión del conocimiento,Aprobación de proyectos de investigación de Docentes Nombrados de la Facultad de Salud - Presentación interna,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,,,,,TRUE,Vic Investigaciones,
-MISIONAL,Gestión del conocimiento,Aprobación de proyectos de investigación de estudiantes de pregrado y postgrado de la Facultad de Salud,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,,,,,TRUE,Vic Investigaciones,
-SOPORTE,Gestión del Talento Humano,Cambio de dedicación de docentes.,https://drive.google.com/file/d/1XChS2y0Ciw6uoir1e7FMlnHXBDNlq1D1/view?usp=drive_link,https://www.calameo.com/read/007858952d61bc06b0396,https://example.com/,EN REVISIÓN,,,,,TRUE,Decanato,Profesional SIAC 
-MISIONAL,Vinculación con la sociedad,Desarrollo de ofertas de educación continua de la facultad de salud,https://drive.google.com/file/d/1bMbT2YR_kTVKfSlQZzrYt8MGxEygZLgv/view?usp=drive_link,https://www.calameo.com/read/007858952b103e24b58bc,https://view.genially.com/6720750b4f0a2471c8fa7bae/presentation-monitorias-universitarias,FINALIZADO,,,,,TRUE,Oficina de Extensión y Proyección Social (OEPS),Profesional  OEPS
-SOPORTE,Gestión del Talento Humano,Designación de cargos académicos administrativos,https://drive.google.com/file/d/1gxba-N0X4OjhDJbBYm7iHylG0qRewIKw/view?usp=drive_link,https://www.calameo.com/read/00785895255891945a2ee,https://example.com/,EN REVISIÓN,,,,,TRUE,Decanato,Profesional SIAC 
-SOPORTE,Gestión de laboratorios,Ejecución de mantenimientos preventivos y correctivos para los equipos laboratorios y HUV de la facultad de salud ,https://example.com/,https://example.com/,https://example.com/,EN ELABORACIÓN,,,,,TRUE,Calidad Laboratorios,Profesional Gestión Calidad Laboratorios
-SOPORTE,Gestión del Talento Humano,Evaluación de Asignaturas ,https://example.com/,https://example.com/,https://example.com/,,,,,,TRUE,Evaluación,Profesional SIAC 
-SOPORTE,Gestión de laboratorios,Evaluación tecnología para proyectos institucionales. ,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,,,,,TRUE,Calidad Laboratorios,
-SOPORTE,Gestión de laboratorios,Gestión del sistema integrado de calidad de la Facultad de Salud,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,,,,,TRUE,Calidad Laboratorios,
-MISIONAL,Vinculación con la sociedad,Gestión logístico-administrativa de convenios y contratos,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,,,,,TRUE,OEPS,
-ESTRATÉGICO,Proyección internacional,Legalización de convenios internacionales,https://example.com/,https://example.com/,https://example.com/,,,,,,TRUE,Asuntos internacionales,Profesional  OAI
-ESTRATÉGICO,Proyección internacional,Movilidad estudiantil internacional  para estudiantes de la Facultad de Salud ( Saliente y entrante),https://example.com/,https://example.com/,https://example.com/,,,,,,TRUE,Asuntos internacionales,Profesional  OAI
-ESTRATÉGICO,Proyección internacional,Movilidad estudiantil internacional entrante para estudiantes de la Facultad de Salud,https://example.com/,https://example.com/,https://example.com/,,,,,,TRUE,Asuntos internacionales,Profesional  OAI
-ESTRATÉGICO,Comunicación Estratégica,Programación Consejo de Facultad.,https://drive.google.com/file/d/1X4UcsduF1cCer5I2_d66hy66FHAzxmw8/view?usp=drive_link,https://www.calameo.com/read/0078589526fb70c90c7cf,https://example.com/,EN REVISIÓN,,,,,TRUE,Decanato,Profesional SIAC 
-MISIONAL,Formación Integral,Registro Calificado y Autoevaluación con fines de acreditación en alta calidad de programas académicos de la Facultad de Salud.,https://example.com/,https://example.com/,https://example.com/,,,,,,TRUE,Oficina de Aseguramiento de la Calidad Facultad de Salud             ,
-SOPORTE,Gestión de laboratorios,Requerimientos (Insumos. equipos) de los laboratorios de la facultad de salud.,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,,,,,TRUE,Calidad Laboratorios,
-MISIONAL,Vinculación con la sociedad,Revisión y diligenciamiento de Sarlaft,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,,,,,TRUE,OEPS,
-SOPORTE,Gestión del Talento Humano,Solicitud de encargaturas,https://drive.google.com/file/d/1MiIGNRkbi_Tjir_jdO5gkD6SwuNLqDs3/view?usp=drive_link,https://www.calameo.com/read/0078589528f3fc68238ef,https://example.com/,EN REVISIÓN,,,,,TRUE,Decanato,Profesional SIAC 
-MISIONAL,Vinculación con la sociedad,Trámite y gestión de descuento a fondo común,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,,,,,TRUE,OEPS,
-MISIONAL,Vinculación con la sociedad,Trámite y gestión de reclasificaciones,https://example.com/,https://example.com/,https://example.com/,NO HA INICIADO,,,,,TRUE,OEPS,
-MISIONAL,Gestión del conocimiento,Gestión de los proyectos de investigación que involucran seres humanos o datos procedentes de éstos ,https://example.com/,https://example.com/,https://example.com/,EN ELABORACIÓN,,,,,TRUE,Calidad Laboratorios,
+MACROPROCESO,PROCESO,NOMBRE GUÍA,PDF,REVISTA,RUTA,VISIBILIDAD
+MISIONAL,Gestión del conocimiento,Aprobación de proyectos de investigación de estudiantes de pregrado y postgrado de la Facultad de Salud,,,,FALSE
+SOPORTE,Gestión del Talento Humano,Cambio de dedicación de docentes,,,,FALSE
+MISIONAL,Vinculación con la sociedad,Desarrollo de ofertas de educación continua de la facultad de salud,https://drive.google.com/file/d/1Fn94cmkwvBI2RqncRYQMPLMhqrdfe4dM/view?usp=drive_link,https://www.calameo.com/read/00785895255adbb2f25e7,,TRUE
+SOPORTE,Gestión del Talento Humano,Designación de cargos académicos administrativos,,,,FALSE
+SOPORTE,Gestión de laboratorios,Ejecución de mantenimientos preventivos y correctivos de equipos en los laboratorios de la FS o en las unidades del HUV,,,,FALSE
+SOPORTE,Gestión de laboratorios,Evaluación tecnológica para proyectos institucionales,,,,FALSE
+MISIONAL,Vinculación con la sociedad,Gestión logístico-administrativa de convenios y contratos,,,,FALSE
+ESTRATÉGICO,Proyección internacional,Legalización de convenios internacionales,,,,FALSE
+ESTRATÉGICO,Proyección internacional,Movilidad estudiantil internacional  para estudiantes de la Facultad de Salud ( Saliente y entrante),,,,FALSE
+ESTRATÉGICO,Proyección internacional,Movilidad estudiantil internacional entrante para estudiantes de la Facultad de Salud,,,,FALSE
+ESTRATÉGICO,Comunicación Estratégica,Programación de la reunión del consejo de la facultad de salud,,,,FALSE
+SOPORTE,Gestión de laboratorios,Identificación de los requerimientos (insumos y equipos) de los laboratorios de la facultad de salud,,,,FALSE
+MISIONAL,Vinculación con la sociedad,Revisión y diligenciamiento de Sarlaft,,,,FALSE
+SOPORTE,Gestión del Talento Humano,Solicitud de encargaturas,,,,FALSE
+MISIONAL,Vinculación con la sociedad,Trámite y gestión de descuento a fondo común,,,,FALSE
+MISIONAL,Vinculación con la sociedad,Trámite y gestión de reclasificaciones,,,,FALSE
+MISIONAL,Gestión del conocimiento,Gestión de los proyectos de investigación que involucran seres humanos o datos procedentes de éstos,,,,FALSE
+,,Diseño y creación de cursos; talleres y diplomados para docentes,,,,FALSE
+MISIONAL,,Regulación de actividades para la realización de las practicas académicas de los estudiantes de la FS,,,,FALSE
+MISIONAL,,Gestión de propuestas de investigación convocatorias internas/externas,,,,FALSE
+SOPORTE,Gestión de laboratorios,Gestión de los procesos de laboratorio de simulación como apoyo a las actividades de docencia e Investigación,,,,FALSE
+MISIONAL,,Autoevaluación de programas académicos,,,,FALSE
+,,Evaluación de Asignaturas,,,,FALSE
+SOPORTE,,Convocatoria; evaluación de méritos y selección de profesores de carrera,,,,FALSE
+,,Gestión de los proyectos de investigación que involucran animales o datos procedentes de éstos,,,,FALSE
+SOPORTE,Gestión del Talento Humano,Trámite de bonificaciones,,,,FALSE
+SOPORTE,Gestión del Talento Humano,Trámite de comisiones de estudio,,,,FALSE
+SOPORTE,Gestión del Talento Humano,Trámite de año sabatico,,,,FALSE
+SOPORTE,Gestión del Talento Humano,Trámite de comisiones adhonorem,,,,FALSE
+SOPORTE,Gestión del Talento Humano,Trámite de comisiones academicas,,,,FALSE
+SOPORTE,Gestión del Talento Humano,Contratacion docente,,,,FALSE
+SOPORTE,Gestión del Talento Humano,Trámite de vacaciones,,,,FALSE
+SOPORTE,Gestión del Talento Humano,Trámite de elaboracion de formatos P3 y reserva presupuestal,,,,FALSE
+,,Producción de recursos educativos digitales,,,,FALSE
+SOPORTE,Gestión Administrativa de Bienes y Servicios,Monitorias universitarias ,,,https://view.genially.com/6720750b4f0a2471c8fa7bae/presentation-monitorias-universitarias,TRUE
+SOPORTE,Gestión Administrativa de Bienes y Servicios,Trámite de bonificaciones acedémicas,,,https://view.genially.com/681e0107b0ff5e3cf78f1b97/presentation-tramite-de-bonificaciones,TRUE
+SOPORTE,Gestión Administrativa de Bienes y Servicios,Póliza de responsabilidad civil (PRC),,,https://www.canva.com/design/DAGDwU4jiQ4/SGhlBCTGRfhoyvF73-qfXg/watch?utm_content=DAGDwU4jiQ4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc9ced83927,TRUE
+SOPORTE,Gestión Administrativa de Bienes y Servicios,Administradora de riesgos laborales (ARL),,,https://www.canva.com/design/DAGFUkNnKW8/ASgwkAb8Etvkfgry2f2cMQ/edit?utm_content=DAGFUkNnKW8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton,FALSE
+SOPORTE,Gestión Administrativa de Bienes y Servicios,Trámite de importaciones,,,https://view.genially.com/67c52474a097f2b862902a2f/presentation-tramite-de-importaciones,TRUE
+ESTRATÉGICO,Proyección Internacional,Vinculación de visitante extranjero,,,https://view.genially.com/65f71d786f3f0f00150b450b/presentation-vinculacion-de-visitante-extrangero,TRUE
+ESTRATÉGICO,Proyección Internacional,Movilidad internacional saliente,,,https://view.genially.com/65f30455d29fcb001454cea5/presentation-movilidad-internacional-saliente,TRUE
+ESTRATÉGICO,Proyección Internacional,Movilidad internacional entrante,,,https://view.genially.com/65c7fb8ab8f413001401c256/presentation-movilidad-internacional-entrante,TRUE
+SOPORTE,Gestión Administrativa de Bienes y Servicios,Gestión de contratos y convenios gestionados por la OEPS,,,,
