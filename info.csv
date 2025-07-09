@@ -1,11 +1,11 @@
 MACROPROCESO,PROCESO,NOMBRE GUÍA,PDF,REVISTA,RUTA,VISIBILIDAD
 MISIONAL,Gestión del conocimiento,Aprobación de proyectos de investigación de estudiantes de pregrado y postgrado de la Facultad de Salud,,,,FALSE
 SOPORTE,Gestión del Talento Humano,Cambio de dedicación de docentes,,,,FALSE
-MISIONAL,Vinculación con la sociedad,Desarrollo de ofertas de educación continua de la facultad de salud,https://drive.google.com/file/d/1Fn94cmkwvBI2RqncRYQMPLMhqrdfe4dM/view?usp=drive_link,https://www.calameo.com/read/00785895255adbb2f25e7,,TRUE
+MISIONAL,Vinculación con la sociedad,Desarrollo de ofertas de educación continua de la facultad de salud,https://drive.google.com/file/d/1Fn94cmkwvBI2RqncRYQMPLMhqrdfe4dM/view?usp=drive_link,https://www.calameo.com/read/007858952e3ad72ccf44d,,TRUE
 SOPORTE,Gestión del Talento Humano,Designación de cargos académicos administrativos,,,,FALSE
-SOPORTE,Gestión de laboratorios,Ejecución de mantenimientos preventivos y correctivos de equipos en los laboratorios de la FS o en las unidades del HUV ,,,,FALSE
+SOPORTE,Gestión de laboratorios,Ejecución de mantenimientos preventivos y correctivos de equipos en los laboratorios de la FS o en las unidades del HUV,,,,FALSE
 SOPORTE,Gestión de laboratorios,Evaluación tecnológica para proyectos institucionales,,,,FALSE
-SOPORTE,Gestión Administrativa de Bienes y Servicios,Gestión de contratos y convenios gestionados por la OEPS,,,,FALSE
+MISIONAL,Vinculación con la sociedad,Gestión de contratos y convenios gestionados por la OEPS,,,,FALSE
 ESTRATÉGICO,Proyección internacional,Legalización de convenios internacionales,,,,FALSE
 ESTRATÉGICO,Proyección internacional,Movilidad estudiantil internacional  para estudiantes de la Facultad de Salud ( Saliente y entrante),,,,FALSE
 ESTRATÉGICO,Proyección internacional,Movilidad estudiantil internacional entrante para estudiantes de la Facultad de Salud,,,,FALSE
@@ -23,7 +23,7 @@ SOPORTE,Gestión de laboratorios,Gestión de los procesos de laboratorio de simu
 MISIONAL,,Autoevaluación de programas académicos,,,,FALSE
 SOPORTE,Gestión del Talento Humano,Evaluación de Asignaturas,https://drive.google.com/file/d/1B7uEel4K-KkzB6O_Ct4TRAtt2oc5ieCN/view?usp=drive_link,https://www.calameo.com/read/0078589522d9cae6f1e54,,TRUE
 SOPORTE,,Convocatoria; evaluación de méritos y selección de profesores de carrera,,,,FALSE
-,,Gestión de los proyectos de investigación que involucran animales o datos procedentes de éstos,,,,FALSE
+,,Gestión de las propuestas de investigación y prácticas biomédicas que involucran animales no humanos o datos procedentes de éstos,,,,FALSE
 SOPORTE,Gestión del Talento Humano,Trámite de bonificaciones,,,,FALSE
 SOPORTE,Gestión del Talento Humano,Trámite de comisiones de estudio,,,,FALSE
 SOPORTE,Gestión del Talento Humano,Trámite de año sabatico,,,,FALSE
@@ -32,7 +32,7 @@ SOPORTE,Gestión del Talento Humano,Trámite de comisiones academicas,,,,FALSE
 SOPORTE,Gestión del Talento Humano,Contratacion docente,,,,FALSE
 SOPORTE,Gestión del Talento Humano,Trámite de vacaciones,,,,FALSE
 SOPORTE,Gestión del Talento Humano,Trámite de elaboracion de formatos P3 y reserva presupuestal,,,,FALSE
-,,Producción de recursos educativos digitales,,,,FALSE
+MISIONAL,Generación y gestión del conocimiento,Producción de recursos educativos digitales,,,,FALSE
 SOPORTE,Gestión Administrativa de Bienes y Servicios,Monitorias universitarias,,,https://view.genially.com/6720750b4f0a2471c8fa7bae/presentation-monitorias-universitarias,TRUE
 SOPORTE,Gestión Administrativa de Bienes y Servicios,Trámite de bonificaciones acedémicas,,,https://view.genially.com/681e0107b0ff5e3cf78f1b97/presentation-tramite-de-bonificaciones,TRUE
 SOPORTE,Gestión Administrativa de Bienes y Servicios,Póliza de responsabilidad civil (PRC),,,https://www.canva.com/design/DAGDwU4jiQ4/SGhlBCTGRfhoyvF73-qfXg/watch?utm_content=DAGDwU4jiQ4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc9ced83927,TRUE
@@ -41,3 +41,6 @@ SOPORTE,Gestión Administrativa de Bienes y Servicios,Trámite de importaciones,
 ESTRATÉGICO,Proyección Internacional,Vinculación de visitante extranjero,,,https://view.genially.com/65f71d786f3f0f00150b450b/presentation-vinculacion-de-visitante-extrangero,TRUE
 ESTRATÉGICO,Proyección Internacional,Movilidad internacional saliente,,,https://view.genially.com/65f30455d29fcb001454cea5/presentation-movilidad-internacional-saliente,TRUE
 ESTRATÉGICO,Proyección Internacional,Movilidad internacional entrante,,,https://view.genially.com/65c7fb8ab8f413001401c256/presentation-movilidad-internacional-entrante,TRUE
+SOPORTE,Gestión del Talento Humano,Vinculación de docentes ad honorem; nombrados y hora cátedra,,,,
+SOPORTE,Gestión Administrativa de Bienes y Servicios,Gestión repositorio de las guías,https://drive.google.com/file/d/1u9cybZn5zw6mE4HDYfu9UP_QfIzCw2Bo/view?usp=drive_link,,,
+MISIONAL,Vinculación con la sociedad,Guía ejemplo,https://drive.google.com/file/d/1UPjTqn3rcXbCBT2A09FModOlFz_fOlbZ/view?usp=drive_link,https://www.calameo.com/read/0078589525b8bbb27580d,,TRUE
