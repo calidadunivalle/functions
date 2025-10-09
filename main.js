@@ -271,7 +271,7 @@ csvToObject("info.csv").then((data) => {
     });
   });
 const orden = ["SOPORTE", "MISIONAL", "ESTRATÉGICO", "CONTROL Y EVALUACIÓN"];
-levels.sort((a, b) => orden.indexOf(a.titulo) - orden.indexOf(b.titulo));
+levels.sort((a, b) => orden.indexOf(a.titulo) - orden.indexOf(b.titulo)).reverse();
 
   let c = { levels };
   let indice = 0.45;
