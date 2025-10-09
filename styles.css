@@ -57,7 +57,7 @@ text {
 g[special] {
   cursor: not-allowed;
 }
-text:not([special]):hover {
+g:not([special]):hover text {
   fill: #fff;
 }
 /* controla el color de texto de los espaciales
