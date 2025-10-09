@@ -3,16 +3,16 @@ function controladorDeProceso() {
   document.querySelector(".ventana")?.remove();
   document.querySelector(".aside")?.remove();
   document.getElementById("nombre-g").classList.add("hidden");
-  generateBigDona(globlal.config_for_big_dona);
+  generateBigDona(global.config_for_big_dona);
 }
-let globlal = {};
+let global = {};
 function deleteWindow() {
   document.querySelector(".ventana").remove();
   document.getElementById("nombre-g").classList.add("hidden");
-  drawBox(globlal.config_for_draw_box);
+  drawBox(global.config_for_draw_box);
 }
 function setGoblal(name, value) {
-  globlal[name] = value;
+  global[name] = value;
 }
 function getSize(expected) {
   let distanceAvaliable =
@@ -270,9 +270,11 @@ csvToObject("info.csv").then((data) => {
       levels[i].sectionsInfo[ii].color = setColor(ee.title, e.titulo);
     });
   });
+const orden = ["SOPORTE", "MISIONAL", "ESTRATÉGICO", "CONTROL Y EVALUACIÓN"];
+levels.sort((a, b) => orden.indexOf(a.titulo) - orden.indexOf(b.titulo));
 
   let c = { levels };
-  let indice = 0.5;
+  let indice = 0.45;
   let size = getSize("distanceAvaliable");
   c.innerRadius = size * indice;
   c.width = size;
