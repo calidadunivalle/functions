@@ -49,7 +49,7 @@ svg {
   grid-area: 1 / 1 / 32 / 32;
 }
 text {
-  fill: white;
+  fill: black;
   font-family: sans-serif;
   text-transform: uppercase;
   font-size: calc(min(100vh, 100vw) * 0.022);
