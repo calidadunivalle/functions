@@ -57,6 +57,9 @@ text {
 g[special] {
   cursor: not-allowed;
 }
+text:not([special]):hover {
+  fill: #fff;
+}
 /* controla el color de texto de los espaciales
 text[special="ESTRATÉGICOS"] {
   fill: var(--color-macro-estratégico);
