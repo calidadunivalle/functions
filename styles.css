@@ -57,6 +57,7 @@ text {
 g[special] {
   cursor: not-allowed;
 }
+/* controla el color de texto de los espaciales
 text[special="ESTRATÉGICOS"] {
   fill: var(--color-macro-estratégico);
 }
@@ -69,6 +70,7 @@ text[special="SOPORTE"] {
 text[special="CONTROL Y EVALUACIÓN"] {
   fill: var(--color-macro-control-y-evaluacion);
 }
+*/
 g {
   cursor: pointer;
 }
