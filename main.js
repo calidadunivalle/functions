@@ -107,7 +107,7 @@ document.querySelectorAll("#macroproceso-g,#proceso-g,#nombre-g").forEach(el => 
       const d = `M ${x1} ${y1} L ${x2} ${y2} A ${outerRadius} ${outerRadius} 0 ${largeArc} 1 ${x3} ${y3}        L ${x4} ${y4} A ${currentRadius} ${currentRadius} 0 ${largeArc} 0 ${x1} ${y1} Z`;
       path.setAttribute("d", d);
       path.setAttribute("fill", `${section.color}`);
-      path.setAttribute("stroke", "#fff");
+      path.setAttribute("stroke", "#000");
       path.setAttribute("stroke-width", "5");
       const textPathId = `textPath-${levelIndex}-${i}`;
       const textArc = document.createElementNS(svgNS, "path");
