@@ -75,6 +75,9 @@ document.querySelectorAll("#macroproceso-g,#proceso-g,#nombre-g").forEach(el => 
   document.body.appendChild(innerContainer);
   drawDataChangers();
 }
+function mod(n, m) {
+  return ((n % m) + m) % m;
+}
 function generateBigDona(config) {
 document.querySelectorAll("#macroproceso-g,#proceso-g,#nombre-g").forEach(el => el.classList.add("hidden"));
 
@@ -90,12 +93,13 @@ document.querySelectorAll("#macroproceso-g,#proceso-g,#nombre-g").forEach(el => 
   config.levels.forEach((level, levelIndex) => {
     const angleStep = (2 * Math.PI) / level.sectionsNumber;
     const outerRadius = currentRadius + config.thickness;
+    // console.log({level, angleStep});
+    
     level.sectionsInfo.forEach((section, i) => {
-      //const startAngle = i * angleStep;
-      //const endAngle = (i + 1) * angleStep;
+      // const startAngle = i * angleStep;
       const startAngle =  mod((i * angleStep) - (angleStep/2), 2 * Math.PI);
+      // const endAngle = (i + 1) * angleStep;
       const endAngle = mod((i + 1) * angleStep - (angleStep/2), 2 * Math.PI) ;
-
       const midAngle = (startAngle + endAngle) / 2;
       const path = document.createElementNS(svgNS, "path");
       const largeArc = angleStep > Math.PI ? 1 : 0;
