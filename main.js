@@ -269,6 +269,7 @@ csvToObject("info.csv").then((data) => {
     e.sectionsInfo.forEach((ee, ii) => {
       levels[i].sectionsInfo[ii].color = setColor(ee.title, e.titulo);
     });
+    e.sectionsInfo.sort((a, b) => (b.title === true) - (a.title === true));
   });
 const orden = ["SOPORTE", "MISIONAL", "ESTRATÉGICO", "CONTROL Y EVALUACIÓN"];
 levels.sort((a, b) => orden.indexOf(a.titulo) - orden.indexOf(b.titulo)).reverse();
