@@ -91,8 +91,11 @@ document.querySelectorAll("#macroproceso-g,#proceso-g,#nombre-g").forEach(el => 
     const angleStep = (2 * Math.PI) / level.sectionsNumber;
     const outerRadius = currentRadius + config.thickness;
     level.sectionsInfo.forEach((section, i) => {
-      const startAngle = i * angleStep;
-      const endAngle = (i + 1) * angleStep;
+      //const startAngle = i * angleStep;
+      //const endAngle = (i + 1) * angleStep;
+      const startAngle =  mod((i * angleStep) - (angleStep/2), 2 * Math.PI);
+      const endAngle = mod((i + 1) * angleStep - (angleStep/2), 2 * Math.PI) ;
+
       const midAngle = (startAngle + endAngle) / 2;
       const path = document.createElementNS(svgNS, "path");
       const largeArc = angleStep > Math.PI ? 1 : 0;
