@@ -113,9 +113,9 @@ a:hover {
 }
 .aside {
   position: fixed;
-  right: 0;
-  top: 0;
-  font-size: calc(min(100vh, 100vw) * 0.2);
+  right: 1%;
+  top: 2%;
+  font-size: min(10vh, 10vw);
   cursor: pointer;
   line-height: 5rem;
 }
@@ -129,17 +129,19 @@ a:hover {
 #nombre-g{
   align-items: flex-start;
 }
-#proceso-g:hover,
-#macroproceso-g:hover{
+#proceso-g,
+#macroproceso-g{
   cursor: pointer;
   color: var(--color-macro-misional);
-  text-decoration:underline;
+  /* text-decoration:underline; */
 }
 #nombre-g {
   cursor: default;
+  font-weight: 350;
 }
 #innerContainer {
   gap: 2%;
+  /* font-size: x-large; */
 }
 #innerContainer > div {
   outline: #0001 2px dashed;
@@ -151,10 +153,12 @@ a:hover {
 .block p {
   transition: all, 0.5s;
   padding: 1vw;
-  border-radius: 20px;
+  border-radius: 1vw;
   cursor: pointer;
   background-color: var(--color-pink-transparent-2);
-  font-size: 140%;
+  font-size: 2.5vw;
+  margin: 3vw;
+  font-weight: 300;
 }
 .block p:hover {
   background-color: var(--color-pink-transparent);
