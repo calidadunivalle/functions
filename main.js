@@ -35,7 +35,7 @@ document.querySelectorAll("#macroproceso-g,#proceso-g,#nombre-g").forEach(el => 
   let aside = document.createElement("span");
   aside.setAttribute("class", "aside");
   aside.setAttribute("onclick", "controladorDeProceso()");
-  aside.innerHTML = `&times;`;
+  aside.innerHTML = `↩`;
   document.body.appendChild(aside);
   let boxZise = (Number.isInteger(Math.sqrt(data.length)))?Math.sqrt(data.length):Math.ceil(Math.sqrt(data.length));
 //   console.log({boxZise});
