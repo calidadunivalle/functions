@@ -1,5 +1,5 @@
 function controladorDeProceso(e=false) {
-  if(e!){
+  if(!e){
   document.querySelector("#innerContainer")?.remove();
   document.querySelector(".ventana")?.remove();
   document.querySelector(".aside")?.remove();
