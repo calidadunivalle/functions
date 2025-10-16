@@ -1,9 +1,13 @@
-function controladorDeProceso() {
+function controladorDeProceso(e=false) {
+  if(e!){
   document.querySelector("#innerContainer")?.remove();
   document.querySelector(".ventana")?.remove();
   document.querySelector(".aside")?.remove();
   document.getElementById("nombre-g").classList.add("hidden");
   generateBigDona(global.config_for_big_dona);
+  }else{
+    deleteWindow();
+  }
 }
 let global = {};
 function deleteWindow() {
