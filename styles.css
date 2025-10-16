@@ -114,10 +114,11 @@ a:hover {
 .aside {
   position: fixed;
   right: 1%;
-  top: 2%;
+  top: -2%;
   font-size: min(10vh, 10vw);
   cursor: pointer;
   line-height: 5rem;
+  color: #0008;
 }
 #proceso-g,
 #macroproceso-g,
