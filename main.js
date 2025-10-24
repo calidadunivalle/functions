@@ -59,22 +59,32 @@ document.querySelectorAll("#macroproceso-g,#proceso-g,#nombre-g").forEach(el => 
     let innerP = document.createElement("p");
     innerP.innerText = `${el["NOMBRE GUÍA"].toLowerCase()}`;
     block.appendChild(innerP);
+   
+  // botones dentro del "block"
+    block.innerHTML += `<div class="seccion">
+        ${el.REVISTA  ? '<a target="_blank" href="' + el.REVISTA + '"> <img src="https://static.thenounproject.com/png/62080-200.png"/> <button type="button"> Previsualizar guía </button></a>'  : ""}
+        ${el.PDF  ? '<a target="_blank" href="' + el.PDF + '"> <img src="https://static.thenounproject.com/png/29074-200.png"/> <button type="button"> Descargar guía </button></a>'  : ""}
+    </div>`; 
+    
+
+
+
     innerContainer.appendChild(block);
 
-    innerP.addEventListener("click", () => {
-      innerContainer?.remove();
-      document.getElementById("nombre-g").innerText = el["NOMBRE GUÍA"];
-      document.getElementById("nombre-g").classList.remove("hidden");
-      document.querySelector(".aside")?.remove();
+    // innerP.addEventListener("click", () => {
+    //   innerContainer?.remove();
+    //   document.getElementById("nombre-g").innerText = el["NOMBRE GUÍA"];
+    //   document.getElementById("nombre-g").classList.remove("hidden");
+    //   document.querySelector(".aside")?.remove();
 
-      let ventana = 
-      `<div class="ventana"> <span class="aside" onclick="deleteWindow()">↩</span> <div class="seccion">
-      ${el.RUTA  ? '<a target="_blank" href="' + el.RUTA + '"> <img src="https://static.thenounproject.com/png/27822-200.png"/> <button type="button"> Ruta metodológica </button></a>'  : ""}
-      ${el.REVISTA  ? '<a target="_blank" href="' + el.REVISTA + '"> <img src="https://static.thenounproject.com/png/62080-200.png"/> <button type="button"> Previsualizar guía </button></a>'  : ""}
-      ${el.PDF  ? '<a target="_blank" href="' + el.PDF + '"> <img src="https://static.thenounproject.com/png/29074-200.png"/> <button type="button"> Descargar guía </button></a>'  : ""}
-      </div>`;
-      document.body.innerHTML += ventana;
-    });
+    //   let ventana = 
+    //   `<div class="ventana"> <span class="aside" onclick="deleteWindow()">↩</span> <div class="seccion">
+    //   ${el.RUTA  ? '<a target="_blank" href="' + el.RUTA + '"> <img src="https://static.thenounproject.com/png/27822-200.png"/> <button type="button"> Ruta metodológica </button></a>'  : ""}
+    //   ${el.REVISTA  ? '<a target="_blank" href="' + el.REVISTA + '"> <img src="https://static.thenounproject.com/png/62080-200.png"/> <button type="button"> Previsualizar guía </button></a>'  : ""}
+    //   ${el.PDF  ? '<a target="_blank" href="' + el.PDF + '"> <img src="https://static.thenounproject.com/png/29074-200.png"/> <button type="button"> Descargar guía </button></a>'  : ""}
+    //   </div>`;
+    //   document.body.innerHTML += ventana;
+    // });
   });
   document.body.appendChild(innerContainer);
   drawDataChangers();

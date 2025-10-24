@@ -81,26 +81,29 @@ g {
   grid-area: 5 / 4 / 30 / 31;
 }
 .seccion {
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  gap: 5vw;
+  gap: 1vw;
   flex-direction: column;
 }
 button {
   background-color: transparent;
   border: none;
   color: #fff;
+  font-size: medium;
 }
 a img {
-  width: 3rem;
+  width: 20%;
   filter: invert();
-  margin: 10px;
+  /* margin: 10px; */
 }
 
 a {
-  padding: 1.2rem 1.5rem;
+  padding: 3% 8%;
+  text-align: center;
   border-radius: 5rem;
   border-style: solid;
   background-color: #bd1522;
@@ -109,7 +112,7 @@ a {
 }
 a:hover {
   background-color: #8d0f19;
-  padding: 1.2rem 2rem;
+  /* padding: 1.2rem 2rem; */
 }
 .aside {
   position: fixed;
@@ -152,19 +155,17 @@ a:hover {
   outline: #0000 2px dashed;
 }
 .block p {
-  transition: all, 0.5s;
-  padding: 1vw;
+  padding: 1.5vw;
+  cursor: default;
+  transition: all, 0.3s;
   border-radius: 1vw;
-  cursor: pointer;
   background-color: var(--color-pink-transparent-2);
   font-size: 2.5vw;
   margin: 3vw;
-  font-weight: 300;
-}
-.block p:hover {
-  background-color: var(--color-pink-transparent);
-  outline: 0.3rem dashed var(--color-pink);
+  font-weight: 400;
+  outline: px dashed var(--color-pink);
   outline-offset: 0.2rem;
+
 }
 .block p::first-letter {
   text-transform: capitalize;
