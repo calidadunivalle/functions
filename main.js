@@ -62,8 +62,8 @@ document.querySelectorAll("#macroproceso-g,#proceso-g,#nombre-g").forEach(el => 
    
   // botones dentro del "block"
     block.innerHTML += `<div class="seccion">
-        ${el.REVISTA  ? '<a target="_blank" href="' + el.REVISTA + '"> <img src="https://static.thenounproject.com/png/62080-200.png"/> <button type="button"> Previsualizar guía </button></a>'  : ""}
-        ${el.PDF  ? '<a target="_blank" href="' + el.PDF + '"> <img src="https://static.thenounproject.com/png/29074-200.png"/> <button type="button"> Descargar guía </button></a>'  : ""}
+        ${el.REVISTA  ? '<a target="_blank" href="' + el.REVISTA + '"> <button type="button"> <img src="https://static.thenounproject.com/png/62080-200.png"/> Previsualizar </button></a>'  : ""}
+        ${el.PDF  ? '<a target="_blank" href="' + el.PDF + '"> <button type="button"> <img src="https://static.thenounproject.com/png/29074-200.png"/> Descargar </button></a>'  : ""}
     </div>`; 
     
 
