@@ -155,7 +155,7 @@ a:hover {
 #innerContainer > div:hover {
   outline: #0000 2px dashed;
 }
-.block p {
+.block p:not(.dependencia) {
   padding: 1.5vw;
   cursor: default;
   transition: all, 0.3s;
@@ -167,6 +167,12 @@ a:hover {
   outline: px dashed var(--color-pink);
   outline-offset: 0.2rem;
 
+}
+.dependencia{
+  position: relative;
+  font-size: calc(2.5vw * 0.6);
+  font-weight: 300;
+  top: 5%;
 }
 .block p::first-letter {
   text-transform: capitalize;
