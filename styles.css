@@ -44,12 +44,12 @@ body {
 svg {
   display: block;
   margin: auto;
-  /* animation: rotateAnimation 100s linear infinite; */
+  animation: rotateAnimation 10000s linear infinite;
   z-index: 0;
   grid-area: 1 / 1 / 32 / 32;
 }
 text {
-  fill: black;
+  fill: var(--color-white);
   font-family: sans-serif;
   text-transform: uppercase;
   font-size: calc(min(100vh, 100vw) * 0.022);
@@ -58,9 +58,10 @@ g[special] {
   cursor: not-allowed;
 }
 g:not([special]):hover text {
-  fill: #fff;
+  fill: var(--color-white);
 }
-/* controla el color de texto de los espaciales
+
+/* controla el color de texto de los espaciales*/
 text[special="ESTRATÉGICOS"] {
   fill: var(--color-macro-estratégico);
 }
@@ -73,7 +74,7 @@ text[special="SOPORTE"] {
 text[special="CONTROL Y EVALUACIÓN"] {
   fill: var(--color-macro-control-y-evaluacion);
 }
-*/
+
 g {
   cursor: pointer;
 }
