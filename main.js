@@ -59,6 +59,10 @@ document.querySelectorAll("#macroproceso-g,#proceso-g,#nombre-g").forEach(el => 
     let innerP = document.createElement("p");
     innerP.innerText = `${el["NOMBRE GUÍA"].toLowerCase()}`;
     block.appendChild(innerP);
+    let innerTempP = document.createElement("p");
+    innerTempP.innerText = `${el["OFICINA-DEPENDENCIA RELACIONADA"]}`;
+    block.appendChild(innerTempP);
+    innerTempP.style.display="none";
    
   // botones dentro del "block"
     block.innerHTML += `<div class="seccion">
