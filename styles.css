@@ -163,7 +163,7 @@ a:hover {
   background-color: var(--color-pink-transparent-2);
   font-size: 2.5vw;
   margin: 3vw;
-  font-weight: 400;
+  font-weight: bolder;
   outline: px dashed var(--color-pink);
   outline-offset: 0.2rem;
 
