@@ -44,7 +44,7 @@ body {
 svg {
   display: block;
   margin: auto;
-  animation: rotateAnimation 10000s linear infinite;
+  animation: rotateAnimation 3000s linear infinite;
   z-index: 0;
   grid-area: 1 / 1 / 32 / 32;
 }
