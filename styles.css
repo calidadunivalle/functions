@@ -172,7 +172,7 @@ a:hover {
   position: relative;
   font-size: calc(2.5vw * 0.6);
   font-weight: 300;
-  top: 5%;
+  top: 10px;
 }
 .block p::first-letter {
   text-transform: capitalize;
