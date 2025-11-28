@@ -62,7 +62,7 @@ document.querySelectorAll("#macroproceso-g,#proceso-g,#nombre-g").forEach(el => 
     innerTempP.innerText = `${el["OFICINA-DEPENDENCIA RELACIONADA"]}`;
     block.appendChild(innerTempP);
     block.appendChild(innerP);
-    innerTempP.style.class="dependencia";
+    innerTempP.classList.add("dependencia");
    
   // botones dentro del "block"
     block.innerHTML += `<div class="seccion">
